@@ -4,9 +4,9 @@
 
 ## 下载后如何打开
 
-1. 下载本仓库（Code → Download ZIP，或 `git clone`）；
-2. 解压后双击打开 **`index.html`** 即可；
-3. 无需服务器、无需联网加载依赖——所有图片已内嵌进 HTML（base64 自包含），不会缺图。
+1. 点右上角绿色 **Code** 按钮 → **Download ZIP**（或 git clone）；
+2. 解压后**保持整个文件夹完整**（index.html 和 images/ 必须在一起）；
+3. 双击打开 **index.html** 即可浏览，无需服务器、无需联网。
 
 > 页面内交互：顶栏分类导航（滚动自动高亮）、产品/食材搜索、点击图片放大、咨询二维码弹层、返回顶部。桌面 / 移动端均适配。
 
@@ -14,9 +14,10 @@
 
 | 文件 | 说明 |
 |---|---|
-| `index.html` | 成品页面（自包含单文件，约 8MB，含全部 81 张图片） |
-| `data/shixiansheng_products.json` | 结构化商品数据（75 条，含配送区域图例 R1-R5） |
-| `README.md` | 本说明 |
+| index.html | 成品页面（约 154KB，引用 images/ 目录） |
+| images/ | 81 张图片（logo + 75 张商品图 + 二维码等） |
+| data/shixiansheng_products.json | 结构化商品数据（75 条，含配送区域图例 R1-R5） |
+| README.md | 本说明 |
 
 ## 数据说明
 
