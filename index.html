@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>拾鲜生 · 2026 标配套餐产品册</title>
+<link rel="icon" type="image/png" href="images/logo.png">
+<style>
+:root{
+  --ink:#0A2A3D; --sea:#0071BC; --sea-deep:#005A96; --coral:#C6051C;
+  --frost:#F1F6FA; --ice:#FFFFFF; --mist:#D9E7F1; --mist-2:#EAF2F8;
+  --font-display:"STKaiti","KaiTi","Kaiti SC","BiauKai",serif;
+  --font-body:-apple-system,"PingFang SC","Microsoft YaHei","Segoe UI",sans-serif;
+  --font-num:Georgia,"Times New Roman",serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--frost);color:var(--ink);font-family:var(--font-body);line-height:1.6;-webkit-font-smoothing:antialiased}
+button{font:inherit;cursor:pointer;background:none;border:none}
+a{color:var(--sea)}
+
+/* ===== 顶栏 ===== */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--mist)}
+.topbar-in{max-width:1200px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:14px}
+.topbar .logo{height:42px;flex:none}
+.nav{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;flex:1}
+.nav::-webkit-scrollbar{display:none}
+.nav-chip{flex:none;padding:6px 13px;border-radius:999px;font-size:13.5px;color:var(--ink);text-decoration:none;border:1px solid transparent;white-space:nowrap;transition:background .15s,color .15s}
+.nav-chip:hover{background:var(--mist-2)}
+.nav-chip.active{background:var(--sea);color:#fff}
+.search{flex:none;position:relative}
+.search input{width:150px;padding:7px 12px 7px 32px;border:1px solid var(--mist);border-radius:999px;font-size:13.5px;background:var(--mist-2);transition:width .2s,background .15s;font-family:var(--font-body)}
+.search input:focus{outline:none;width:200px;background:#fff;border-color:var(--sea)}
+.search svg{position:absolute;left:11px;top:50%;transform:translateY(-50%);width:14px;height:14px;stroke:var(--sea);fill:none;stroke-width:2}
+.count{flex:none;font-size:13px;color:var(--sea-deep);white-space:nowrap}
+
+/* ===== 咨询入口 ===== */
+.contact{flex:none;position:relative}
+.contact-btn{padding:7px 14px;border:1px solid var(--sea);border-radius:999px;color:var(--sea);font-size:13.5px;white-space:nowrap;transition:background .15s,color .15s;font-family:var(--font-body)}
+.contact-btn:hover,.contact.open .contact-btn{background:var(--sea);color:#fff}
+.contact-btn:focus-visible{outline:2px solid var(--coral);outline-offset:2px}
+.qr-pop{position:absolute;top:calc(100% + 12px);right:0;width:248px;background:#fff;border:1px solid var(--mist);border-radius:14px;padding:16px 16px 12px;box-shadow:0 18px 44px rgba(10,42,61,.2);display:none;z-index:80}
+.qr-pop::before{content:"";position:absolute;top:-7px;right:26px;width:12px;height:12px;background:#fff;border-left:1px solid var(--mist);border-top:1px solid var(--mist);transform:rotate(45deg)}
+.contact.open .qr-pop{display:block;animation:popIn .18s ease}
+@keyframes popIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.qr-pop img{display:block;width:100%;border-radius:8px;border:1px solid var(--mist-2)}
+.qr-pop p{margin-top:9px;text-align:center;font-size:13px;color:var(--ink)}
+.qr-pop b{color:var(--sea-deep)}
+@media (max-width:640px){
+  .contact-btn{padding:6px 11px;font-size:12.5px}
+  .qr-pop{width:216px;padding:12px 12px 9px;top:calc(100% + 10px)}
+}
+
+/* ===== Hero ===== */
+.hero{background:linear-gradient(180deg,#FFFFFF 0%,var(--frost) 100%);text-align:center;padding:64px 20px 58px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;left:0;right:0;bottom:-28px;height:56px;background:radial-gradient(circle at 11px 4px,transparent 12px,var(--sea) 13px,var(--sea) 17px,transparent 18px) repeat-x;background-size:44px 44px;opacity:.16}
+.hero .logo{width:148px;margin-bottom:16px;filter:drop-shadow(0 6px 18px rgba(0,113,188,.18))}
+.hero h1{font-family:var(--font-display);font-size:clamp(30px,5vw,44px);color:var(--ink);letter-spacing:.08em}
+.hero h1 em{font-style:normal;color:var(--sea)}
+.hero .tag{margin-top:8px;font-size:15.5px;color:var(--sea-deep)}
+.hero .meta{margin-top:24px;display:inline-flex;border:1px solid var(--mist);border-radius:12px;background:var(--ice);overflow:hidden}
+.hero .meta div{padding:12px 26px;font-family:var(--font-num);text-align:center}
+.hero .meta div+div{border-left:1px solid var(--mist)}
+.hero .meta b{display:block;font-size:26px;color:var(--coral);font-weight:600}
+.hero .meta span{font-size:12.5px;color:var(--sea-deep);font-family:var(--font-body)}
+.hero .date{margin-top:14px;font-size:13px;color:#7c93a3}
+
+/* ===== 系列分区 ===== */
+main{max-width:1200px;margin:0 auto;padding:8px 20px 60px}
+.series{margin-top:52px}
+.series-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:18px;border-bottom:2px solid var(--mist);padding-bottom:14px}
+.series-head .star{width:26px;height:26px;fill:var(--coral);align-self:center;flex:none}
+.series-head h2{font-family:var(--font-display);font-size:27px;color:var(--sea-deep);letter-spacing:.04em}
+.series-head p{font-size:14px;color:#5f7889;flex:1;min-width:200px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(272px,1fr));gap:20px}
+
+/* ===== 卡片 ===== */
+.card{background:var(--ice);border:1px solid var(--mist);border-radius:14px;overflow:hidden;position:relative;display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease;opacity:0;transform:translateY(16px)}
+.card.in{opacity:1;transform:none}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(10,42,61,.12)}
+.tw{position:absolute;top:10px;right:10px;z-index:2;background:rgba(10,42,61,.78);color:#fff;font-size:11.5px;padding:3px 9px;border-radius:999px}
+.card-img{display:block;width:100%;padding:0;background:var(--mist-2)}
+.card-img img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover}
+.noimg{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;color:#8aa2b3;font-size:14px}
+.card-img:focus-visible{outline:3px solid var(--sea);outline-offset:-3px}
+.card-body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card-body h3{font-size:16.5px;line-height:1.45;font-weight:600}
+.price{color:var(--coral);font-family:var(--font-num);display:flex;align-items:baseline;gap:2px}
+.price .cur{font-size:15px}
+.price .num{font-size:30px;font-weight:600;letter-spacing:-.01em}
+.price .unit{font-family:var(--font-body);font-size:12.5px;color:#8aa2b3;margin-left:3px}
+.specs{list-style:none;font-size:13px;color:#41586b;display:flex;flex-direction:column;gap:4px}
+.specs li{padding-left:14px;position:relative}
+.specs li::before{content:"";position:absolute;left:0;top:.62em;width:5px;height:5px;border-radius:1px;background:var(--sea);transform:rotate(45deg)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
+.chip{font-size:12px;padding:3px 10px;border-radius:999px;border:1px solid var(--mist);color:var(--sea-deep);background:var(--mist-2);white-space:nowrap}
+.chip.status{border-color:#F2C9CE;color:var(--coral);background:#FDF3F4}
+.jd{margin-top:2px;font-size:13px;text-decoration:none;color:var(--sea);align-self:flex-start;border-bottom:1px dashed var(--sea)}
+.jd:hover{color:var(--sea-deep)}
+.empty{display:none;text-align:center;padding:60px 20px;color:#5f7889}
+.empty b{display:block;font-size:18px;color:var(--sea-deep);margin-bottom:6px;font-weight:600}
+
+/* ===== 图片放大 ===== */
+.lightbox{position:fixed;inset:0;z-index:100;background:rgba(6,24,36,.86);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.lightbox.open{display:flex}
+.lightbox img{max-width:min(88vw,760px);max-height:88vh;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.lightbox .lb-name{position:absolute;top:18px;left:50%;transform:translateX(-50%);color:#fff;font-size:14px;opacity:.85;max-width:80vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* ===== 页脚 ===== */
+footer{background:var(--ink);color:#B9CBD8;padding:40px 20px 30px;margin-top:70px}
+.foot-in{max-width:1200px;margin:0 auto}
+footer h4{font-family:var(--font-display);color:#fff;font-size:19px;letter-spacing:.08em;margin-bottom:14px}
+.legend{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:10px;font-size:13px;line-height:1.7}
+.legend b{color:#7FB8DD;font-family:var(--font-num);margin-right:6px}
+.pack-note{margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.12);font-size:13px;color:#8FA9BC}
+.copyright{margin-top:10px;font-size:12px;color:#5F7889}
+
+/* ===== 返回顶部 ===== */
+.to-top{position:fixed;right:22px;bottom:26px;z-index:60;width:44px;height:44px;border-radius:50%;background:var(--sea);color:#fff;box-shadow:0 8px 20px rgba(0,90,150,.35);opacity:0;pointer-events:none;transition:opacity .25s;align-items:center;justify-content:center;display:flex}
+.to-top.show{opacity:1;pointer-events:auto}
+.to-top:hover{background:var(--sea-deep)}
+.to-top svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2.4}
+.to-top:focus-visible{outline:3px solid var(--coral)}
+
+@media (max-width:640px){
+  .topbar-in{padding:8px 12px;gap:10px}
+  .topbar .logo{height:34px}
+  .search input{width:110px}
+  .search input:focus{width:140px}
+  .count{display:none}
+  .hero{padding:44px 16px 46px}
+  .hero .logo{width:116px}
+  .hero .meta div{padding:10px 16px}
+  main{padding:8px 14px 50px}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+  .series-head h2{font-size:23px}
+  .to-top{right:14px;bottom:18px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .card{opacity:1;transform:none;transition:none}
+  .card:hover{transform:none}
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-in">
+    <img class="logo" src="images/logo.png" alt="拾鲜生 logo">
+    <nav class="nav" aria-label="产品系列导航"><a href="#cat1" class="nav-chip" data-cat="cat1">商超爆款组合</a><a href="#cat2" class="nav-chip" data-cat="cat2">冬令火锅蔬菜</a><a href="#cat3" class="nav-chip" data-cat="cat3">暖冬火锅组合</a><a href="#cat4" class="nav-chip" data-cat="cat4">精选海鲜礼盒</a><a href="#cat5" class="nav-chip" data-cat="cat5">甄选生鲜礼盒</a><a href="#cat6" class="nav-chip" data-cat="cat6">进口牛排礼盒</a><a href="#cat7" class="nav-chip" data-cat="cat7">海陆综合礼盒</a><a href="#cat8" class="nav-chip" data-cat="cat8">东海全鳞钓带鱼</a><a href="#cat9" class="nav-chip" data-cat="cat9">海捕臻品冰鲜</a><a href="#cat10" class="nav-chip" data-cat="cat10">大闸蟹 · 黑卡</a><a href="#cat11" class="nav-chip" data-cat="cat11">大闸蟹 · 红卡</a><a href="#cat12" class="nav-chip" data-cat="cat12">海参燕窝滋补</a></nav>
+    <div class="search">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="搜索产品 / 食材" aria-label="搜索产品或食材">
+    </div>
+    <span class="count" id="count">75 款</span>
+    <div class="contact" id="contact">
+      <button class="contact-btn" id="contactBtn" aria-haspopup="true" aria-expanded="false">咨询请联系 姜泽</button>
+      <div class="qr-pop" id="qrPop" role="dialog" aria-label="姜泽微信二维码">
+        <img src="images/qr_jiangze.png" alt="姜泽 微信二维码">
+        <p>微信扫码，联系 <b>姜泽</b> 咨询</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <img class="logo" src="images/logo.png" alt="拾鲜生">
+  <h1>拾四季鲜 · 生海之味</h1>
+  <p class="tag">2026 标配套餐产品册 —— 从东海渔场到您的餐桌</p>
+  <div class="meta">
+    <div><b>12</b><span>产品系列</span></div>
+    <div><b>75</b><span>在售款型</span></div>
+    <div><b>¥298</b><span>起 · 礼盒装</span></div>
+  </div>
+  <p class="date">报价更新：2026 年 11 月 19 日</p>
+</section>
+
+<main>
+<section class="series" id="cat1" data-name="商超爆款组合">
+  <header class="series-head">
+    <svg class="star" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2 L24.5 14.5 L37 15 L27 23 L30.5 35.5 L20 28 L9.5 35.5 L13 23 L3 15 L15.5 14.5 Z"/></svg>
+    <h2>商超爆款组合</h2>
+    <p>商超渠道的走量担当，全海鲜配置，从 368 到 898 各档配齐。</p>
+  </header>
+  <div class="grid"><article class="card" data-search="ka商超爆款组合368型 东山小管鱿鱼300g/袋×1 渤海盐田虾300g/袋×1 手打大颗粒鲜虾滑400g/袋×1 厚切免浆黑鱼片400g/盒×1 香菇猪油嫩鱼丸250g/袋×1 商超爆款组合 商超渠道的走量担当，全海鲜配置，从 368 到 898 各档配齐。">
+  
+  <button class="card-img" data-full="images/1_1_0.jpg" aria-label="放大查看 KA商超爆款组合368型 图片">
+    <img src="images/1_1_0.jpg" alt="KA商超爆款组合368型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>KA商超爆款组合368型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">368</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>东山小管鱿鱼300g/袋×1</li><li>渤海盐田虾300g/袋×1</li><li>手打大颗粒鲜虾滑400g/袋×1</li><li>厚切免浆黑鱼片400g/盒×1</li><li>香菇猪油嫩鱼丸250g/袋×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物</span>
+    </div>
+    
+  </div>
+</article><article class="card" data-search="ka商超爆款组合568型 东山手钓火箭鱿鱼600g/袋×1 渤海盐田虾300g/袋×1 手打大颗粒鲜虾滑400g/袋×1 东山小管鱿鱼300g/袋×1 厚切免浆黑鱼片400g/盒×1 香菇猪油嫩鱼丸250g/袋×1 商超爆款组合 商超渠道的走量担当，全海鲜配置，从 368 到 898 各档配齐。">
+  
+  <button class="card-img" data-full="images/1_2_0.jpg" aria-label="放大查看 KA商超爆款组合568型 图片">
+    <img src="images/1_2_0.jpg" alt="KA商超爆款组合568型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>KA商超爆款组合568型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">568</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>东山手钓火箭鱿鱼600g/袋×1</li><li>渤海盐田虾300g/袋×1</li><li>手打大颗粒鲜虾滑400g/袋×1</li><li>东山小管鱿鱼300g/袋×1</li><li>厚切免浆黑鱼片400g/盒×1</li><li>香菇猪油嫩鱼丸250g/袋×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物</span>
+    </div>
+    
+  </div>
+</article><article class="card" data-search="ka断货款东山手钓火箭鱿鱼组合568型 东山手钓火箭鱿鱼600g/盒×3 商超爆款组合 商超渠道的走量担当，全海鲜配置，从 368 到 898 各档配齐。">
+  
+  <button class="card-img" data-full="images/1_3_0.jpg" aria-label="放大查看 KA断货款东山手钓火箭鱿鱼组合568型 图片">
+    <img src="images/1_3_0.jpg" alt="KA断货款东山手钓火箭鱿鱼组合568型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>KA断货款东山手钓火箭鱿鱼组合568型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">568</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>东山手钓火箭鱿鱼600g/盒×3</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物</span>
+    </div>
+    
+  </div>
+</article><article class="card" data-search="ka商超爆款组合698型 活杀三去东星斑鱼600g/盒×1 东山小管鱿鱼300g/袋×1 手打大颗粒鲜虾滑400g/袋×1 厚切上浆鲈鱼片400g/盒×1 渤海盐田虾300g/袋×1 香菇猪油嫩鱼丸250g/袋×1 商超爆款组合 商超渠道的走量担当，全海鲜配置，从 368 到 898 各档配齐。">
+  
+  <button class="card-img" data-full="images/1_4_0.jpg" aria-label="放大查看 KA商超爆款组合698型 图片">
+    <img src="images/1_4_0.jpg" alt="KA商超爆款组合698型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>KA商超爆款组合698型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">698</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>活杀三去东星斑鱼600g/盒×1</li><li>东山小管鱿鱼300g/袋×1</li><li>手打大颗粒鲜虾滑400g/袋×1</li><li>厚切上浆鲈鱼片400g/盒×1</li><li>渤海盐田虾300g/袋×1</li><li>香菇猪油嫩鱼丸250g/袋×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物</span>
+    </div>
+    
+  </div>
+</article><article class="card" data-search="ka商超爆款全家福组合898型 活杀三去东星斑鱼600g/盒×1 东山手钓火箭鱿鱼600g/袋×1 东山小管鱿鱼300g/袋×1 渤海盐田虾300g/袋×1 手打大颗粒鲜虾滑400g/袋×1 厚切上浆鲈鱼片400g/盒×1 厚切免浆黑鱼片400g/盒×1 香菇猪油嫩鱼丸250g/袋×1 商超爆款组合 商超渠道的走量担当，全海鲜配置，从 368 到 898 各档配齐。">
+  
+  <button class="card-img" data-full="images/1_5_0.jpg" aria-label="放大查看 KA商超爆款全家福组合898型 图片">
+    <img src="images/1_5_0.jpg" alt="KA商超爆款全家福组合898型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>KA商超爆款全家福组合898型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">898</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>活杀三去东星斑鱼600g/盒×1</li><li>东山手钓火箭鱿鱼600g/袋×1</li><li>东山小管鱿鱼300g/袋×1</li><li>渤海盐田虾300g/袋×1</li><li>手打大颗粒鲜虾滑400g/袋×1</li><li>厚切上浆鲈鱼片400g/盒×1</li><li>厚切免浆黑鱼片400g/盒×1</li><li>香菇猪油嫩鱼丸250g/袋×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物</span>
+    </div>
+    
+  </div>
+</article></div>
+</section><section class="series" id="cat2" data-name="冬令火锅蔬菜">
+  <header class="series-head">
+    <svg class="star" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2 L24.5 14.5 L37 15 L27 23 L30.5 35.5 L20 28 L9.5 35.5 L13 23 L3 15 L15.5 14.5 Z"/></svg>
+    <h2>冬令火锅蔬菜</h2>
+    <p>海鲜打头阵，崇明蔬菜压轴；海鲜与蔬菜分两个包裹发出，鲜不打折。</p>
+  </header>
+  <div class="grid"><article class="card" data-search="热气腾腾冬令火锅蔬菜组合398型 手打大颗粒鲜虾滑400g/袋×1 厚切免浆黑鱼片400g/盒×1 香菇猪油嫩鱼丸250g/袋×1 崇明绿色蔬菜2500g礼盒（崇明绿色蔬菜500g*4种：娃娃菜、菠菜、松花菜、白萝卜）×1 冬令火锅蔬菜 海鲜打头阵，崇明蔬菜压轴；海鲜与蔬菜分两个包裹发出，鲜不打折。">
+  
+  <button class="card-img" data-full="images/2_1_0.jpg" aria-label="放大查看 热气腾腾冬令火锅蔬菜组合398型 图片">
+    <img src="images/2_1_0.jpg" alt="热气腾腾冬令火锅蔬菜组合398型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>热气腾腾冬令火锅蔬菜组合398型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">398</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>手打大颗粒鲜虾滑400g/袋×1</li><li>厚切免浆黑鱼片400g/盒×1</li><li>香菇猪油嫩鱼丸250g/袋×1</li><li>崇明绿色蔬菜2500g礼盒（崇明绿色蔬菜500g*4种：娃娃菜、菠菜、松花菜、白萝卜）×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="配送范围：江浙沪皖">江浙沪皖</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">海鲜/蔬菜 2个包裹</span>
+    </div>
+    
+  </div>
+</article><article class="card" data-search="热气腾腾冬令火锅蔬菜组合498型 手打大颗粒鲜虾滑400g/袋×1 厚切免浆黑鱼片400g/盒×1 香菇猪油嫩鱼丸250g/袋×1 澳洲180天谷饲安格斯肥牛牛肉片（金贴体包装）200g/盒×1 澳洲180天谷饲安格斯前胸牛肉片（金贴体包装）200g/盒×1 崇明绿色蔬菜2500g礼盒（崇明绿色蔬菜500g*4种：娃娃菜、菠菜、松花菜、白萝卜）×1 冬令火锅蔬菜 海鲜打头阵，崇明蔬菜压轴；海鲜与蔬菜分两个包裹发出，鲜不打折。">
+  
+  <button class="card-img" data-full="images/2_2_0.jpg" aria-label="放大查看 热气腾腾冬令火锅蔬菜组合498型 图片">
+    <img src="images/2_2_0.jpg" alt="热气腾腾冬令火锅蔬菜组合498型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>热气腾腾冬令火锅蔬菜组合498型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">498</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>手打大颗粒鲜虾滑400g/袋×1</li><li>厚切免浆黑鱼片400g/盒×1</li><li>香菇猪油嫩鱼丸250g/袋×1</li><li>澳洲180天谷饲安格斯肥牛牛肉片（金贴体包装）200g/盒×1</li><li>澳洲180天谷饲安格斯前胸牛肉片（金贴体包装）200g/盒×1</li><li>崇明绿色蔬菜2500g礼盒（崇明绿色蔬菜500g*4种：娃娃菜、菠菜、松花菜、白萝卜）×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="配送范围：江浙沪皖">江浙沪皖</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">海鲜/蔬菜 2个包裹</span>
+    </div>
+    
+  </div>
+</article><article class="card" data-search="热气腾腾冬令火锅蔬菜组合598型 手打大颗粒鲜虾滑400g/袋×1 东山小管鱿鱼300g/袋×1 厚切免浆黑鱼片400g/盒×1 香菇猪油嫩鱼丸250g/袋×1 澳洲180天谷饲安格斯肥牛牛肉片（金贴体包装）200g/盒×1 澳洲180天谷饲安格斯上脑牛肉片（金贴体包装）200g/盒×1 崇明绿色蔬菜2500g礼盒（崇明绿色蔬菜500g*4种：娃娃菜、菠菜、松花菜、白萝卜）×1 冬令火锅蔬菜 海鲜打头阵，崇明蔬菜压轴；海鲜与蔬菜分两个包裹发出，鲜不打折。">
+  
+  <button class="card-img" data-full="images/2_4_0.jpg" aria-label="放大查看 热气腾腾冬令火锅蔬菜组合598型 图片">
+    <img src="images/2_4_0.jpg" alt="热气腾腾冬令火锅蔬菜组合598型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>热气腾腾冬令火锅蔬菜组合598型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">598</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>手打大颗粒鲜虾滑400g/袋×1</li><li>东山小管鱿鱼300g/袋×1</li><li>厚切免浆黑鱼片400g/盒×1</li><li>香菇猪油嫩鱼丸250g/袋×1</li><li>澳洲180天谷饲安格斯肥牛牛肉片（金贴体包装）200g/盒×1</li><li>澳洲180天谷饲安格斯上脑牛肉片（金贴体包装）200g/盒×1</li><li>崇明绿色蔬菜2500g礼盒（崇明绿色蔬菜500g*4种：娃娃菜、菠菜、松花菜、白萝卜）×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="配送范围：江浙沪皖">江浙沪皖</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">海鲜/蔬菜 2个包裹</span>
+    </div>
+    
+  </div>
+</article><article class="card" data-search="热气腾腾冬令火锅蔬菜组合698型 手打大颗粒鲜虾滑400g/袋×1 东山小管鱿鱼300g/袋×1 厚切免浆黑鱼片400g/盒×1 香菇猪油嫩鱼丸250g/袋×1 厚切上浆鲈鱼片400g/盒×1 澳洲180天谷饲安格斯肥牛牛肉片（金贴体包装）200g/盒×1 澳洲180天谷饲安格斯前胸牛肉片（金贴体包装）200g/盒×1 澳洲180天谷饲安格斯上脑牛肉片（金贴体包装）200g/盒×1 崇明绿色蔬菜2500g礼盒（崇明绿色蔬菜500g*4种：娃娃菜、菠菜、松花菜、白萝卜）×1 冬令火锅蔬菜 海鲜打头阵，崇明蔬菜压轴；海鲜与蔬菜分两个包裹发出，鲜不打折。">
+  
+  <button class="card-img" data-full="images/2_5_0.jpg" aria-label="放大查看 热气腾腾冬令火锅蔬菜组合698型 图片">
+    <img src="images/2_5_0.jpg" alt="热气腾腾冬令火锅蔬菜组合698型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>热气腾腾冬令火锅蔬菜组合698型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">698</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>手打大颗粒鲜虾滑400g/袋×1</li><li>东山小管鱿鱼300g/袋×1</li><li>厚切免浆黑鱼片400g/盒×1</li><li>香菇猪油嫩鱼丸250g/袋×1</li><li>厚切上浆鲈鱼片400g/盒×1</li><li>澳洲180天谷饲安格斯肥牛牛肉片（金贴体包装）200g/盒×1</li><li>澳洲180天谷饲安格斯前胸牛肉片（金贴体包装）200g/盒×1</li><li>澳洲180天谷饲安格斯上脑牛肉片（金贴体包装）200g/盒×1</li><li>崇明绿色蔬菜2500g礼盒（崇明绿色蔬菜500g*4种：娃娃菜、菠菜、松花菜、白萝卜）×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="配送范围：江浙沪皖">江浙沪皖</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">海鲜/蔬菜 2个包裹</span>
+    </div>
+    
+  </div>
+</article><article class="card" data-search="热气腾腾冬令火锅蔬菜组合898型 手打大颗粒鲜虾滑400g/袋×1 东山小管鱿鱼300g/袋×1 厚切免浆黑鱼片400g/盒×1 香菇猪油嫩鱼丸250g/袋×1 厚切上浆鲈鱼片400g/盒×1 澳洲180天谷饲安格斯肥牛牛肉片（金贴体包装）200g/盒×2 澳洲180天谷饲安格斯前胸牛肉片（金贴体包装）200g/盒×1 澳洲180天谷饲安格斯上脑牛肉片（金贴体包装）200g/盒×1 澳洲180天谷饲安格斯雪花牛肉片（金贴体包装）200g/盒×1 崇明绿色蔬菜3000g礼盒（崇明绿色蔬菜500g*6种：娃娃菜、鸡毛菜、菠菜、松花菜、白萝卜、土豆）×1 冬令火锅蔬菜 海鲜打头阵，崇明蔬菜压轴；海鲜与蔬菜分两个包裹发出，鲜不打折。">
+  
+  <button class="card-img" data-full="images/2_6_0.jpg" aria-label="放大查看 热气腾腾冬令火锅蔬菜组合898型 图片">
+    <img src="images/2_6_0.jpg" alt="热气腾腾冬令火锅蔬菜组合898型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>热气腾腾冬令火锅蔬菜组合898型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">898</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>手打大颗粒鲜虾滑400g/袋×1</li><li>东山小管鱿鱼300g/袋×1</li><li>厚切免浆黑鱼片400g/盒×1</li><li>香菇猪油嫩鱼丸250g/袋×1</li><li>厚切上浆鲈鱼片400g/盒×1</li><li>澳洲180天谷饲安格斯肥牛牛肉片（金贴体包装）200g/盒×2</li><li>澳洲180天谷饲安格斯前胸牛肉片（金贴体包装）200g/盒×1</li><li>澳洲180天谷饲安格斯上脑牛肉片（金贴体包装）200g/盒×1</li><li>澳洲180天谷饲安格斯雪花牛肉片（金贴体包装）200g/盒×1</li><li>崇明绿色蔬菜3000g礼盒（崇明绿色蔬菜500g*6种：娃娃菜、鸡毛菜、菠菜、松花菜、白萝卜、土豆）×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="配送范围：江浙沪皖">江浙沪皖</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">海鲜/蔬菜 2个包裹</span>
+    </div>
+    
+  </div>
+</article></div>
+</section><section class="series" id="cat3" data-name="暖冬火锅组合">
+  <header class="series-head">
+    <svg class="star" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2 L24.5 14.5 L37 15 L27 23 L30.5 35.5 L20 28 L9.5 35.5 L13 23 L3 15 L15.5 14.5 Z"/></svg>
+    <h2>暖冬火锅组合</h2>
+    <p>一顿火锅的家底都在这里：虾滑、鱼片、安格斯牛肉，涮到心满意足。</p>
+  </header>
+  <div class="grid"><article class="card" data-search="暖冬时令火锅组合398型 手打大颗粒鲜虾滑400g/袋×1 厚切免浆黑鱼片400g/盒×1 厚切上浆鲈鱼片400g/盒×1 澳洲180天谷饲安格斯肥牛牛肉片（金贴体包装）200g/盒×1 澳洲180天谷饲安格斯上脑牛肉片（金贴体包装）200g/盒×1 暖冬火锅组合 一顿火锅的家底都在这里：虾滑、鱼片、安格斯牛肉，涮到心满意足。">
+  
+  <button class="card-img" data-full="images/3_1_0.jpg" aria-label="放大查看 暖冬时令火锅组合398型 图片">
+    <img src="images/3_1_0.jpg" alt="暖冬时令火锅组合398型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>暖冬时令火锅组合398型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">398</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>手打大颗粒鲜虾滑400g/袋×1</li><li>厚切免浆黑鱼片400g/盒×1</li><li>厚切上浆鲈鱼片400g/盒×1</li><li>澳洲180天谷饲安格斯肥牛牛肉片（金贴体包装）200g/盒×1</li><li>澳洲180天谷饲安格斯上脑牛肉片（金贴体包装）200g/盒×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物</span>
+    </div>
+    
+  </div>
+</article><article class="card" data-search="暖冬时令火锅组合498型 手打大颗粒鲜虾滑400g/袋×1 厚切免浆黑鱼片400g/盒×1 厚切上浆鲈鱼片400g/盒×1 香菇猪油嫩鱼丸250g/袋×1 澳洲180天谷饲安格斯肥牛牛肉片（金贴体包装）200g/盒×1 澳洲180天谷饲安格斯前胸牛肉片（金贴体包装）200g/盒×1 澳洲180天谷饲安格斯上脑牛肉片（金贴体包装）200g/盒×1 暖冬火锅组合 一顿火锅的家底都在这里：虾滑、鱼片、安格斯牛肉，涮到心满意足。">
+  
+  <button class="card-img" data-full="images/3_2_0.jpg" aria-label="放大查看 暖冬时令火锅组合498型 图片">
+    <img src="images/3_2_0.jpg" alt="暖冬时令火锅组合498型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>暖冬时令火锅组合498型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">498</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>手打大颗粒鲜虾滑400g/袋×1</li><li>厚切免浆黑鱼片400g/盒×1</li><li>厚切上浆鲈鱼片400g/盒×1</li><li>香菇猪油嫩鱼丸250g/袋×1</li><li>澳洲180天谷饲安格斯肥牛牛肉片（金贴体包装）200g/盒×1</li><li>澳洲180天谷饲安格斯前胸牛肉片（金贴体包装）200g/盒×1</li><li>澳洲180天谷饲安格斯上脑牛肉片（金贴体包装）200g/盒×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物</span>
+    </div>
+    
+  </div>
+</article><article class="card" data-search="暖冬时令火锅组合598型 手打大颗粒鲜虾滑400g/袋×1 东山小管鱿鱼300g/袋×1 厚切免浆黑鱼片400g/盒×1 厚切上浆鲈鱼片400g/盒×1 香菇猪油嫩鱼丸250g/袋×1 澳洲180天谷饲安格斯前胸牛肉片（金贴体包装）200g/盒×1 澳洲180天谷饲安格斯上脑牛肉片（金贴体包装）200g/盒×1 澳洲180天谷饲安格斯雪花牛肉片（金贴体包装）200g/盒×1 暖冬火锅组合 一顿火锅的家底都在这里：虾滑、鱼片、安格斯牛肉，涮到心满意足。">
+  
+  <button class="card-img" data-full="images/3_4_0.jpg" aria-label="放大查看 暖冬时令火锅组合598型 图片">
+    <img src="images/3_4_0.jpg" alt="暖冬时令火锅组合598型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>暖冬时令火锅组合598型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">598</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>手打大颗粒鲜虾滑400g/袋×1</li><li>东山小管鱿鱼300g/袋×1</li><li>厚切免浆黑鱼片400g/盒×1</li><li>厚切上浆鲈鱼片400g/盒×1</li><li>香菇猪油嫩鱼丸250g/袋×1</li><li>澳洲180天谷饲安格斯前胸牛肉片（金贴体包装）200g/盒×1</li><li>澳洲180天谷饲安格斯上脑牛肉片（金贴体包装）200g/盒×1</li><li>澳洲180天谷饲安格斯雪花牛肉片（金贴体包装）200g/盒×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物</span>
+    </div>
+    
+  </div>
+</article><article class="card" data-search="暖冬时令火锅组合698型 手打大颗粒鲜虾滑400g/袋×1 东山小管鱿鱼300g/袋×1 厚切免浆黑鱼片400g/盒×1 厚切上浆鲈鱼片400g/盒×1 香菇猪油嫩鱼丸250g/袋×2 澳洲180天谷饲安格斯肥牛牛肉片（金贴体包装）200g/盒×1 澳洲180天谷饲安格斯前胸牛肉片（金贴体包装）200g/盒×1 澳洲180天谷饲安格斯上脑牛肉片（金贴体包装）200g/盒×1 澳洲180天谷饲安格斯雪花牛肉片（金贴体包装）200g/盒×1 暖冬火锅组合 一顿火锅的家底都在这里：虾滑、鱼片、安格斯牛肉，涮到心满意足。">
+  
+  <button class="card-img" data-full="images/3_5_0.jpg" aria-label="放大查看 暖冬时令火锅组合698型 图片">
+    <img src="images/3_5_0.jpg" alt="暖冬时令火锅组合698型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>暖冬时令火锅组合698型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">698</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>手打大颗粒鲜虾滑400g/袋×1</li><li>东山小管鱿鱼300g/袋×1</li><li>厚切免浆黑鱼片400g/盒×1</li><li>厚切上浆鲈鱼片400g/盒×1</li><li>香菇猪油嫩鱼丸250g/袋×2</li><li>澳洲180天谷饲安格斯肥牛牛肉片（金贴体包装）200g/盒×1</li><li>澳洲180天谷饲安格斯前胸牛肉片（金贴体包装）200g/盒×1</li><li>澳洲180天谷饲安格斯上脑牛肉片（金贴体包装）200g/盒×1</li><li>澳洲180天谷饲安格斯雪花牛肉片（金贴体包装）200g/盒×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物</span>
+    </div>
+    
+  </div>
+</article><article class="card" data-search="暖冬时令火锅组合898型 手打大颗粒鲜虾滑400g/袋×2 东山小管鱿鱼300g/袋×1 厚切免浆黑鱼片400g/盒×1 香菇猪油嫩鱼丸250g/袋×1 厚切上浆鲈鱼片400g/盒×1 澳洲180天安格斯肥牛牛肉片（金贴体包装）200g/盒×1 澳洲180天安格斯前胸牛肉片（金贴体包装）200g/盒×2 澳洲180天安格斯上脑牛肉片（金贴体包装）200g/盒×2 澳洲180天安格斯雪花牛肉片（金贴体包装）200g/盒×1 暖冬火锅组合 一顿火锅的家底都在这里：虾滑、鱼片、安格斯牛肉，涮到心满意足。">
+  
+  <button class="card-img" data-full="images/3_6_0.jpg" aria-label="放大查看 暖冬时令火锅组合898型 图片">
+    <img src="images/3_6_0.jpg" alt="暖冬时令火锅组合898型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>暖冬时令火锅组合898型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">898</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>手打大颗粒鲜虾滑400g/袋×2</li><li>东山小管鱿鱼300g/袋×1</li><li>厚切免浆黑鱼片400g/盒×1</li><li>香菇猪油嫩鱼丸250g/袋×1</li><li>厚切上浆鲈鱼片400g/盒×1</li><li>澳洲180天安格斯肥牛牛肉片（金贴体包装）200g/盒×1</li><li>澳洲180天安格斯前胸牛肉片（金贴体包装）200g/盒×2</li><li>澳洲180天安格斯上脑牛肉片（金贴体包装）200g/盒×2</li><li>澳洲180天安格斯雪花牛肉片（金贴体包装）200g/盒×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物</span>
+    </div>
+    
+  </div>
+</article></div>
+</section><section class="series" id="cat4" data-name="精选海鲜礼盒">
+  <header class="series-head">
+    <svg class="star" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2 L24.5 14.5 L37 15 L27 23 L30.5 35.5 L20 28 L9.5 35.5 L13 23 L3 15 L15.5 14.5 Z"/></svg>
+    <h2>精选海鲜礼盒</h2>
+    <p>从 298 到 2988 十档排开——大黄鱼、帝王蟹、澳龙，丰俭由人。</p>
+  </header>
+  <div class="grid"><article class="card" data-search="拾鲜生海鲜礼盒298型（无卡券） 深海野化大黄鱼400g-500g/条×1 东海带鱼中段400g/袋×1 深海鳕鱼排300g/袋×1 东海海捕大对虾250g/袋×1 精品目鱼花300g/袋×1 琥珀海蜇头460g/罐×1 巴沙鱼柳400g/袋×1 精选海鲜礼盒 从 298 到 2988 十档排开——大黄鱼、帝王蟹、澳龙，丰俭由人。">
+  
+  <button class="card-img" data-full="images/4_1_0.jpg" aria-label="放大查看 拾鲜生海鲜礼盒298型（无卡券） 图片">
+    <img src="images/4_1_0.jpg" alt="拾鲜生海鲜礼盒298型（无卡券）" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生海鲜礼盒298型（无卡券）</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">298</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>深海野化大黄鱼400g-500g/条×1</li><li>东海带鱼中段400g/袋×1</li><li>深海鳕鱼排300g/袋×1</li><li>东海海捕大对虾250g/袋×1</li><li>精品目鱼花300g/袋×1</li><li>琥珀海蜇头460g/罐×1</li><li>巴沙鱼柳400g/袋×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10217381740492.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="拾鲜生海鲜礼盒398型（有卡券） 深海野化大黄鱼400g-500g/条×1 南海深海金鲳鱼300-400g/条×1 深海鳕鱼排300g/袋×1 东海海捕大对虾250g/袋×1 鱿鱼圈350g/袋×1 原味鲜贝柱500g/袋×1 精选特大青虾仁260g/袋×1 东海野生小白鲳400g/袋（3-4条装）×1 精选海鲜礼盒 从 298 到 2988 十档排开——大黄鱼、帝王蟹、澳龙，丰俭由人。">
+  
+  <button class="card-img" data-full="images/4_2_0.jpg" aria-label="放大查看 拾鲜生海鲜礼盒398型（有卡券） 图片">
+    <img src="images/4_2_0.jpg" alt="拾鲜生海鲜礼盒398型（有卡券）" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生海鲜礼盒398型（有卡券）</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">398</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>深海野化大黄鱼400g-500g/条×1</li><li>南海深海金鲳鱼300-400g/条×1</li><li>深海鳕鱼排300g/袋×1</li><li>东海海捕大对虾250g/袋×1</li><li>鱿鱼圈350g/袋×1</li><li>原味鲜贝柱500g/袋×1</li><li>精选特大青虾仁260g/袋×1</li><li>东海野生小白鲳400g/袋（3-4条装）×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物/卡券</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10217381740493.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="拾鲜生海鲜礼盒498型（无卡券） 深海野化大黄鱼400g-500g/条×1 东海带鱼中段400g/袋×1 满籽多春鱼300g/袋×1 东海海捕大对虾250g/袋×1 整切进口三文鱼扒200g/袋×1 原味鲜贝柱500g/袋×1 大连深海鲍鱼250g/袋×1 石斑黄金鱼丸250g/袋×1 精选海鲜礼盒 从 298 到 2988 十档排开——大黄鱼、帝王蟹、澳龙，丰俭由人。">
+  
+  <button class="card-img" data-full="images/4_3_0.jpg" aria-label="放大查看 拾鲜生海鲜礼盒498型（无卡券） 图片">
+    <img src="images/4_3_0.jpg" alt="拾鲜生海鲜礼盒498型（无卡券）" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生海鲜礼盒498型（无卡券）</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">498</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>深海野化大黄鱼400g-500g/条×1</li><li>东海带鱼中段400g/袋×1</li><li>满籽多春鱼300g/袋×1</li><li>东海海捕大对虾250g/袋×1</li><li>整切进口三文鱼扒200g/袋×1</li><li>原味鲜贝柱500g/袋×1</li><li>大连深海鲍鱼250g/袋×1</li><li>石斑黄金鱼丸250g/袋×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10217381740494.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="拾鲜生海鲜礼盒598型（有卡券） 深海野化大黄鱼400g-500g/条×1 冰岛红极参400g/袋×1 精选特大青虾仁260g/袋×1 南海深海金鲳鱼300-400g/条×1 东海海捕大对虾250g/袋×1 整切进口三文鱼扒200g/袋×1 原味鲜贝柱500g/袋×1 大连深海鲍鱼250g/袋×1 石斑黄金鱼丸250g/袋×1 琥珀海蜇头460g/罐×1 精选海鲜礼盒 从 298 到 2988 十档排开——大黄鱼、帝王蟹、澳龙，丰俭由人。">
+  
+  <button class="card-img" data-full="images/4_4_0.jpg" aria-label="放大查看 拾鲜生海鲜礼盒598型（有卡券） 图片">
+    <img src="images/4_4_0.jpg" alt="拾鲜生海鲜礼盒598型（有卡券）" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生海鲜礼盒598型（有卡券）</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">598</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>深海野化大黄鱼400g-500g/条×1</li><li>冰岛红极参400g/袋×1</li><li>精选特大青虾仁260g/袋×1</li><li>南海深海金鲳鱼300-400g/条×1</li><li>东海海捕大对虾250g/袋×1</li><li>整切进口三文鱼扒200g/袋×1</li><li>原味鲜贝柱500g/袋×1</li><li>大连深海鲍鱼250g/袋×1</li><li>石斑黄金鱼丸250g/袋×1</li><li>琥珀海蜇头460g/罐×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物/卡券</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10217381740495.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="拾鲜生海鲜礼盒698型（有卡券） 深海野化大黄鱼600g-800g/条×1 福建大乌参300g/袋×1 精选特大青虾仁260g/袋×1 南海深海金鲳鱼300-400g/条×1 生冻黑虎虾400g/盒×1 整切进口三文鱼扒200g/袋×1 原味鲜贝柱500g/袋×1 大连深海鲍鱼250g/袋×1 东海带鱼中段400g/袋×1 深海鳕鱼排300g/袋×1 精选海鲜礼盒 从 298 到 2988 十档排开——大黄鱼、帝王蟹、澳龙，丰俭由人。">
+  
+  <button class="card-img" data-full="images/4_5_0.jpg" aria-label="放大查看 拾鲜生海鲜礼盒698型（有卡券） 图片">
+    <img src="images/4_5_0.jpg" alt="拾鲜生海鲜礼盒698型（有卡券）" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生海鲜礼盒698型（有卡券）</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">698</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>深海野化大黄鱼600g-800g/条×1</li><li>福建大乌参300g/袋×1</li><li>精选特大青虾仁260g/袋×1</li><li>南海深海金鲳鱼300-400g/条×1</li><li>生冻黑虎虾400g/盒×1</li><li>整切进口三文鱼扒200g/袋×1</li><li>原味鲜贝柱500g/袋×1</li><li>大连深海鲍鱼250g/袋×1</li><li>东海带鱼中段400g/袋×1</li><li>深海鳕鱼排300g/袋×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物/卡券</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10217381740496.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="拾鲜生海鲜礼盒898型（有卡券） 深海野化大黄鱼600g-800g/条×1 阿拉斯加雪蟹腿400-600g/盒×1 精选特大青虾仁260g/袋×1 东海野生大鲳鱼350-450g/条×1 生冻黑虎虾400g/盒×1 整切进口三文鱼扒200g/袋×1 原味鲜贝柱500g/袋×1 大连深海鲍鱼250g/袋×1 半壳虾夷扇贝350g/袋×1 深海鳕鱼排300g/袋×1 东海带鱼中段400g/袋×1 精选海鲜礼盒 从 298 到 2988 十档排开——大黄鱼、帝王蟹、澳龙，丰俭由人。">
+  
+  <button class="card-img" data-full="images/4_6_0.jpg" aria-label="放大查看 拾鲜生海鲜礼盒898型（有卡券） 图片">
+    <img src="images/4_6_0.jpg" alt="拾鲜生海鲜礼盒898型（有卡券）" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生海鲜礼盒898型（有卡券）</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">898</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>深海野化大黄鱼600g-800g/条×1</li><li>阿拉斯加雪蟹腿400-600g/盒×1</li><li>精选特大青虾仁260g/袋×1</li><li>东海野生大鲳鱼350-450g/条×1</li><li>生冻黑虎虾400g/盒×1</li><li>整切进口三文鱼扒200g/袋×1</li><li>原味鲜贝柱500g/袋×1</li><li>大连深海鲍鱼250g/袋×1</li><li>半壳虾夷扇贝350g/袋×1</li><li>深海鳕鱼排300g/袋×1</li><li>东海带鱼中段400g/袋×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物/卡券</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10217381740497.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="拾鲜生海鲜礼盒1088型（有卡券） 深海野化大黄鱼600g-800g/条×1 波士顿龙虾300-400g/只×1 生冻黑虎虾400g/盒×1 东海野生大鲳鱼350-450g/条×1 北极甜虾300g/袋×1 整切进口三文鱼扒200g/袋×1 原味鲜贝柱500g/袋×1 大连深海鲍鱼250g/袋×1 福建大乌参300g/袋×1 半壳虾夷扇贝350g/袋×1 东海带鱼中段400g/袋×1 石斑黄金鱼丸250g/袋×1 精选海鲜礼盒 从 298 到 2988 十档排开——大黄鱼、帝王蟹、澳龙，丰俭由人。">
+  
+  <button class="card-img" data-full="images/4_7_0.jpg" aria-label="放大查看 拾鲜生海鲜礼盒1088型（有卡券） 图片">
+    <img src="images/4_7_0.jpg" alt="拾鲜生海鲜礼盒1088型（有卡券）" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生海鲜礼盒1088型（有卡券）</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">1,088</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>深海野化大黄鱼600g-800g/条×1</li><li>波士顿龙虾300-400g/只×1</li><li>生冻黑虎虾400g/盒×1</li><li>东海野生大鲳鱼350-450g/条×1</li><li>北极甜虾300g/袋×1</li><li>整切进口三文鱼扒200g/袋×1</li><li>原味鲜贝柱500g/袋×1</li><li>大连深海鲍鱼250g/袋×1</li><li>福建大乌参300g/袋×1</li><li>半壳虾夷扇贝350g/袋×1</li><li>东海带鱼中段400g/袋×1</li><li>石斑黄金鱼丸250g/袋×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物/卡券</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10217381740498.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="拾鲜生海鲜礼盒1288型（有卡券） 深海东星斑400-500g/条×1 波士顿龙虾300-400g/只×1 深海野化大黄鱼400g-500g/条×1 法国银鳕鱼220g/袋×1 生冻黑虎虾400g/盒×1 整切进口三文鱼扒200g/袋×1 原味鲜贝柱500g/袋×1 大连深海鲍鱼250g/袋×1 冰岛红极参400g/袋×1 半壳虾夷扇贝350g/袋×1 精选特大青虾仁260g/袋×1 石斑黄金鱼丸250g/袋×1 精选海鲜礼盒 从 298 到 2988 十档排开——大黄鱼、帝王蟹、澳龙，丰俭由人。">
+  
+  <button class="card-img" data-full="images/4_8_0.jpg" aria-label="放大查看 拾鲜生海鲜礼盒1288型（有卡券） 图片">
+    <img src="images/4_8_0.jpg" alt="拾鲜生海鲜礼盒1288型（有卡券）" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生海鲜礼盒1288型（有卡券）</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">1,288</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>深海东星斑400-500g/条×1</li><li>波士顿龙虾300-400g/只×1</li><li>深海野化大黄鱼400g-500g/条×1</li><li>法国银鳕鱼220g/袋×1</li><li>生冻黑虎虾400g/盒×1</li><li>整切进口三文鱼扒200g/袋×1</li><li>原味鲜贝柱500g/袋×1</li><li>大连深海鲍鱼250g/袋×1</li><li>冰岛红极参400g/袋×1</li><li>半壳虾夷扇贝350g/袋×1</li><li>精选特大青虾仁260g/袋×1</li><li>石斑黄金鱼丸250g/袋×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物/卡券</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10217381740499.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="拾鲜生海鲜礼盒1888型（有卡券） 熟冻俄罗斯帝王蟹腿（盐冻）450-600g/盒×1 澳洲红龙500-600g/只×1 深海东星斑400-500g/条×1 法国银鳕鱼220g/袋×1 生冻黑虎虾400g/盒×1 深海野化大黄鱼600g-800g/条×1 原味鲜贝柱500g/袋×1 大连深海鲍鱼250g/袋×1 冰岛红极参400g/袋×1 半壳虾夷扇贝350g/袋×1 精选特大青虾仁260g/袋×1 石斑黄金鱼丸250g/袋×1 精选海鲜礼盒 从 298 到 2988 十档排开——大黄鱼、帝王蟹、澳龙，丰俭由人。">
+  
+  <button class="card-img" data-full="images/4_9_0.jpg" aria-label="放大查看 拾鲜生海鲜礼盒1888型（有卡券） 图片">
+    <img src="images/4_9_0.jpg" alt="拾鲜生海鲜礼盒1888型（有卡券）" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生海鲜礼盒1888型（有卡券）</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">1,888</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>熟冻俄罗斯帝王蟹腿（盐冻）450-600g/盒×1</li><li>澳洲红龙500-600g/只×1</li><li>深海东星斑400-500g/条×1</li><li>法国银鳕鱼220g/袋×1</li><li>生冻黑虎虾400g/盒×1</li><li>深海野化大黄鱼600g-800g/条×1</li><li>原味鲜贝柱500g/袋×1</li><li>大连深海鲍鱼250g/袋×1</li><li>冰岛红极参400g/袋×1</li><li>半壳虾夷扇贝350g/袋×1</li><li>精选特大青虾仁260g/袋×1</li><li>石斑黄金鱼丸250g/袋×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物/卡券</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10217381740500.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="拾鲜生海鲜礼盒2988型（有卡券） 东海野奢黄金龙大黄鱼800g-1000g/条×1 熟冻俄罗斯帝王蟹腿（盐冻）450-600g/盒×1 澳洲红龙500-600g/只×1 深海东星斑400-500g/条×1 法国银鳕鱼220g/袋×1 海捕老鼠斑450-550g/条×1 阿拉斯加雪蟹腿400-600g/盒×1 东海野生大鲳鱼350-450g/条×1 大连深海鲍鱼250g/袋×1 福建大乌参300g/袋×1 半壳虾夷扇贝350g/袋×1 生冻黑虎虾400g/盒×1 精选海鲜礼盒 从 298 到 2988 十档排开——大黄鱼、帝王蟹、澳龙，丰俭由人。">
+  
+  <button class="card-img" data-full="images/4_10_0.jpg" aria-label="放大查看 拾鲜生海鲜礼盒2988型（有卡券） 图片">
+    <img src="images/4_10_0.jpg" alt="拾鲜生海鲜礼盒2988型（有卡券）" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生海鲜礼盒2988型（有卡券）</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">2,988</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>东海野奢黄金龙大黄鱼800g-1000g/条×1</li><li>熟冻俄罗斯帝王蟹腿（盐冻）450-600g/盒×1</li><li>澳洲红龙500-600g/只×1</li><li>深海东星斑400-500g/条×1</li><li>法国银鳕鱼220g/袋×1</li><li>海捕老鼠斑450-550g/条×1</li><li>阿拉斯加雪蟹腿400-600g/盒×1</li><li>东海野生大鲳鱼350-450g/条×1</li><li>大连深海鲍鱼250g/袋×1</li><li>福建大乌参300g/袋×1</li><li>半壳虾夷扇贝350g/袋×1</li><li>生冻黑虎虾400g/盒×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物/卡券</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10217387304372.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article></div>
+</section><section class="series" id="cat5" data-name="甄选生鲜礼盒">
+  <header class="series-head">
+    <svg class="star" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2 L24.5 14.5 L37 15 L27 23 L30.5 35.5 L20 28 L9.5 35.5 L13 23 L3 15 L15.5 14.5 Z"/></svg>
+    <h2>甄选生鲜礼盒</h2>
+    <p>禽肉猪牛羊一盒配齐：九华山童子鸡、乌珠穆沁羔羊，家的味道。</p>
+  </header>
+  <div class="grid"><article class="card" data-search="拾鲜生生鲜礼盒298型 九华山童子鸡600-700g/只×1 樱桃谷散养鸭1000-1200g/只×1 精品五花肉400g/袋×1 带皮猪后腿肉400g/袋×1 精切猪大排400g/袋×1 和牛牛肉汉堡饼100g/袋×2 甄选生鲜礼盒 禽肉猪牛羊一盒配齐：九华山童子鸡、乌珠穆沁羔羊，家的味道。">
+  
+  <button class="card-img" data-full="images/5_1_0.jpg" aria-label="放大查看 拾鲜生生鲜礼盒298型 图片">
+    <img src="images/5_1_0.jpg" alt="拾鲜生生鲜礼盒298型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生生鲜礼盒298型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">298</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>九华山童子鸡600-700g/只×1</li><li>樱桃谷散养鸭1000-1200g/只×1</li><li>精品五花肉400g/袋×1</li><li>带皮猪后腿肉400g/袋×1</li><li>精切猪大排400g/袋×1</li><li>和牛牛肉汉堡饼100g/袋×2</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10169007865390.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="拾鲜生生鲜礼盒398型 原切牛腩块350g/袋×1 原切牛腱子350g/袋×1 九华山童子鸡600-700g/只×1 精修猪肋排400g/袋×1 精品五花肉400g/袋×1 精切猪大排400g/袋×1 和牛牛肉汉堡饼100g/袋×1 甄选生鲜礼盒 禽肉猪牛羊一盒配齐：九华山童子鸡、乌珠穆沁羔羊，家的味道。">
+  
+  <button class="card-img" data-full="images/5_2_0.jpg" aria-label="放大查看 拾鲜生生鲜礼盒398型 图片">
+    <img src="images/5_2_0.jpg" alt="拾鲜生生鲜礼盒398型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生生鲜礼盒398型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">398</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>原切牛腩块350g/袋×1</li><li>原切牛腱子350g/袋×1</li><li>九华山童子鸡600-700g/只×1</li><li>精修猪肋排400g/袋×1</li><li>精品五花肉400g/袋×1</li><li>精切猪大排400g/袋×1</li><li>和牛牛肉汉堡饼100g/袋×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10220986486137.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="拾鲜生生鲜礼盒498型 九华山老母鸡1200-1400g/只×1 原切牛腱子350g/袋×1 原切牛腩块350g/袋×1 精品五花肉400g/袋×1 精切猪大排400g/袋×1 带皮猪后腿肉400g/袋×1 乌珠穆沁旗草原地标羔羊蝎子500g/袋×1 和牛牛肉汉堡饼100g/袋×2 甄选生鲜礼盒 禽肉猪牛羊一盒配齐：九华山童子鸡、乌珠穆沁羔羊，家的味道。">
+  
+  <button class="card-img" data-full="images/5_3_0.jpg" aria-label="放大查看 拾鲜生生鲜礼盒498型 图片">
+    <img src="images/5_3_0.jpg" alt="拾鲜生生鲜礼盒498型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生生鲜礼盒498型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">498</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>九华山老母鸡1200-1400g/只×1</li><li>原切牛腱子350g/袋×1</li><li>原切牛腩块350g/袋×1</li><li>精品五花肉400g/袋×1</li><li>精切猪大排400g/袋×1</li><li>带皮猪后腿肉400g/袋×1</li><li>乌珠穆沁旗草原地标羔羊蝎子500g/袋×1</li><li>和牛牛肉汉堡饼100g/袋×2</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10220986486138.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="拾鲜生生鲜礼盒598型 九华山老母鸡1200-1400g/只×1 樱桃谷散养鸭1000-1200g/只×1 原切牛肋条350g/袋×1 原切牛腩块350g/袋×1 乌珠穆沁旗草原地标羔羊肋排400g/袋×1 精品五花肉400g/袋×1 精切猪大排400g/袋×1 净猪蹄切块400g/袋×1 和牛牛肉汉堡饼100g/袋×1 甄选生鲜礼盒 禽肉猪牛羊一盒配齐：九华山童子鸡、乌珠穆沁羔羊，家的味道。">
+  
+  <button class="card-img" data-full="images/5_4_0.jpg" aria-label="放大查看 拾鲜生生鲜礼盒598型 图片">
+    <img src="images/5_4_0.jpg" alt="拾鲜生生鲜礼盒598型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生生鲜礼盒598型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">598</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>九华山老母鸡1200-1400g/只×1</li><li>樱桃谷散养鸭1000-1200g/只×1</li><li>原切牛肋条350g/袋×1</li><li>原切牛腩块350g/袋×1</li><li>乌珠穆沁旗草原地标羔羊肋排400g/袋×1</li><li>精品五花肉400g/袋×1</li><li>精切猪大排400g/袋×1</li><li>净猪蹄切块400g/袋×1</li><li>和牛牛肉汉堡饼100g/袋×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10220986486139.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="拾鲜生生鲜礼盒698型 九华山老母鸡1200-1400g/只×1 原切牛肋条350g/袋×1 原切牛腱子350g/袋×1 乌珠穆沁旗草原地标羔羊肋排400g/袋×1 乌珠穆沁旗草原地标羔羊蝎子500g/袋×1 精修猪肋排400g/袋×1 精切猪大排400g/袋×1 原切谷饲西冷牛排150g/片×1 原切谷饲眼肉牛排150g/片×1 甄选生鲜礼盒 禽肉猪牛羊一盒配齐：九华山童子鸡、乌珠穆沁羔羊，家的味道。">
+  
+  <button class="card-img" data-full="images/5_5_0.jpg" aria-label="放大查看 拾鲜生生鲜礼盒698型 图片">
+    <img src="images/5_5_0.jpg" alt="拾鲜生生鲜礼盒698型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生生鲜礼盒698型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">698</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>九华山老母鸡1200-1400g/只×1</li><li>原切牛肋条350g/袋×1</li><li>原切牛腱子350g/袋×1</li><li>乌珠穆沁旗草原地标羔羊肋排400g/袋×1</li><li>乌珠穆沁旗草原地标羔羊蝎子500g/袋×1</li><li>精修猪肋排400g/袋×1</li><li>精切猪大排400g/袋×1</li><li>原切谷饲西冷牛排150g/片×1</li><li>原切谷饲眼肉牛排150g/片×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10220986486140.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="拾鲜生生鲜礼盒898型 九华山老母鸡1200-1400g/只×1 樱桃谷散养鸭1000-1200g/只×1 原切牛肋条350g/袋×1 原切牛腱子350g/袋×1 原切牛腩块350g/袋×1 乌珠穆沁旗草原地标羔羊肋排400g/袋×1 法式小羊排500g/袋×1 精修猪肋排400g/袋×1 精切猪大排400g/袋×1 安格斯原切雪花眼肉牛排180g/袋×1 安格斯原切雪花上脑牛排180g/袋×1 和牛牛肉汉堡饼100g/袋×1 甄选生鲜礼盒 禽肉猪牛羊一盒配齐：九华山童子鸡、乌珠穆沁羔羊，家的味道。">
+  
+  <button class="card-img" data-full="images/5_6_0.jpg" aria-label="放大查看 拾鲜生生鲜礼盒898型 图片">
+    <img src="images/5_6_0.jpg" alt="拾鲜生生鲜礼盒898型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生生鲜礼盒898型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">898</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>九华山老母鸡1200-1400g/只×1</li><li>樱桃谷散养鸭1000-1200g/只×1</li><li>原切牛肋条350g/袋×1</li><li>原切牛腱子350g/袋×1</li><li>原切牛腩块350g/袋×1</li><li>乌珠穆沁旗草原地标羔羊肋排400g/袋×1</li><li>法式小羊排500g/袋×1</li><li>精修猪肋排400g/袋×1</li><li>精切猪大排400g/袋×1</li><li>安格斯原切雪花眼肉牛排180g/袋×1</li><li>安格斯原切雪花上脑牛排180g/袋×1</li><li>和牛牛肉汉堡饼100g/袋×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10220994404823.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article></div>
+</section><section class="series" id="cat6" data-name="进口牛排礼盒">
+  <header class="series-head">
+    <svg class="star" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2 L24.5 14.5 L37 15 L27 23 L30.5 35.5 L20 28 L9.5 35.5 L13 23 L3 15 L15.5 14.5 Z"/></svg>
+    <h2>进口牛排礼盒</h2>
+    <p>谷饲西冷到雪花战斧，切好分装，回家下锅就煎。</p>
+  </header>
+  <div class="grid"><article class="card" data-search="拾鲜生进口牛排礼盒298型 原切谷饲西冷牛排150g/片×3 原切谷饲眼肉牛排150g/片×2 进口牛排礼盒 谷饲西冷到雪花战斧，切好分装，回家下锅就煎。">
+  
+  <button class="card-img" data-full="images/6_1_0.jpg" aria-label="放大查看 拾鲜生进口牛排礼盒298型 图片">
+    <img src="images/6_1_0.jpg" alt="拾鲜生进口牛排礼盒298型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生进口牛排礼盒298型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">298</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>原切谷饲西冷牛排150g/片×3</li><li>原切谷饲眼肉牛排150g/片×2</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10221010953143.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="拾鲜生进口牛排礼盒398型 安格斯原切雪花眼肉牛排180g/袋×3 安格斯原切雪花上脑牛排180g/袋×2 进口牛排礼盒 谷饲西冷到雪花战斧，切好分装，回家下锅就煎。">
+  
+  <button class="card-img" data-full="images/6_2_0.jpg" aria-label="放大查看 拾鲜生进口牛排礼盒398型 图片">
+    <img src="images/6_2_0.jpg" alt="拾鲜生进口牛排礼盒398型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生进口牛排礼盒398型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">398</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>安格斯原切雪花眼肉牛排180g/袋×3</li><li>安格斯原切雪花上脑牛排180g/袋×2</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10221010953144.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="拾鲜生进口牛排礼盒498型 安格斯原切雪花战斧牛排300g/袋×1 安格斯原切雪花上脑牛排180g/袋×2 安格斯原切雪花眼肉牛排180g/袋×2 安格斯原切雪花板腱牛排180g/袋×1 进口牛排礼盒 谷饲西冷到雪花战斧，切好分装，回家下锅就煎。">
+  
+  <button class="card-img" data-full="images/6_3_0.jpg" aria-label="放大查看 拾鲜生进口牛排礼盒498型 图片">
+    <img src="images/6_3_0.jpg" alt="拾鲜生进口牛排礼盒498型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生进口牛排礼盒498型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">498</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>安格斯原切雪花战斧牛排300g/袋×1</li><li>安格斯原切雪花上脑牛排180g/袋×2</li><li>安格斯原切雪花眼肉牛排180g/袋×2</li><li>安格斯原切雪花板腱牛排180g/袋×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10221010953145.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="拾鲜生进口牛排礼盒598型 安格斯原切雪花战斧牛排300g/袋×1 安格斯原切雪花上脑牛排180g/袋×1 安格斯原切雪花眼肉牛排180g/袋×2 安格斯原切雪花板腱牛排180g/袋×2 原切谷饲带骨牛肋排500g/袋×1 进口牛排礼盒 谷饲西冷到雪花战斧，切好分装，回家下锅就煎。">
+  
+  <button class="card-img" data-full="images/6_4_0.jpg" aria-label="放大查看 拾鲜生进口牛排礼盒598型 图片">
+    <img src="images/6_4_0.jpg" alt="拾鲜生进口牛排礼盒598型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生进口牛排礼盒598型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">598</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>安格斯原切雪花战斧牛排300g/袋×1</li><li>安格斯原切雪花上脑牛排180g/袋×1</li><li>安格斯原切雪花眼肉牛排180g/袋×2</li><li>安格斯原切雪花板腱牛排180g/袋×2</li><li>原切谷饲带骨牛肋排500g/袋×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10221010953146.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="拾鲜生进口牛排礼盒698型 安格斯原切雪花战斧牛排300g/袋×2 安格斯原切雪花眼肉牛排180g/袋×2 安格斯原切雪花上脑牛排180g/袋×2 原切谷饲带骨牛肋排500g/袋×2 进口牛排礼盒 谷饲西冷到雪花战斧，切好分装，回家下锅就煎。">
+  
+  <button class="card-img" data-full="images/6_5_0.jpg" aria-label="放大查看 拾鲜生进口牛排礼盒698型 图片">
+    <img src="images/6_5_0.jpg" alt="拾鲜生进口牛排礼盒698型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生进口牛排礼盒698型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">698</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>安格斯原切雪花战斧牛排300g/袋×2</li><li>安格斯原切雪花眼肉牛排180g/袋×2</li><li>安格斯原切雪花上脑牛排180g/袋×2</li><li>原切谷饲带骨牛肋排500g/袋×2</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10221010953147.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="拾鲜生进口牛排礼盒898型 安格斯原切雪花战斧牛排300g/袋×2 安格斯原切雪花上脑牛排180g/袋×3 安格斯原切雪花眼肉牛排180g/袋×2 安格斯原切雪花板腱牛排180g/袋×2 原切谷饲带骨牛肋排500g/袋×2 进口牛排礼盒 谷饲西冷到雪花战斧，切好分装，回家下锅就煎。">
+  
+  <button class="card-img" data-full="images/6_6_0.jpg" aria-label="放大查看 拾鲜生进口牛排礼盒898型 图片">
+    <img src="images/6_6_0.jpg" alt="拾鲜生进口牛排礼盒898型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生进口牛排礼盒898型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">898</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>安格斯原切雪花战斧牛排300g/袋×2</li><li>安格斯原切雪花上脑牛排180g/袋×3</li><li>安格斯原切雪花眼肉牛排180g/袋×2</li><li>安格斯原切雪花板腱牛排180g/袋×2</li><li>原切谷饲带骨牛肋排500g/袋×2</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10221010953148.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article></div>
+</section><section class="series" id="cat7" data-name="海陆综合礼盒">
+  <header class="series-head">
+    <svg class="star" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2 L24.5 14.5 L37 15 L27 23 L30.5 35.5 L20 28 L9.5 35.5 L13 23 L3 15 L15.5 14.5 Z"/></svg>
+    <h2>海陆综合礼盒</h2>
+    <p>海里游的、地上跑的一桌端齐，家宴送礼两相宜。</p>
+  </header>
+  <div class="grid"><article class="card" data-search="拾鲜生海陆综合礼盒298型 深海野化大黄鱼400g-500g/条×1 东海带鱼中段400g/袋×1 东海海捕大对虾250g/袋×1 精切猪大排400g/袋×1 精品五花肉400g/袋×1 和牛牛肉汉堡饼100g/袋×2 海陆综合礼盒 海里游的、地上跑的一桌端齐，家宴送礼两相宜。">
+  
+  <button class="card-img" data-full="images/7_1_0.jpg" aria-label="放大查看 拾鲜生海陆综合礼盒298型 图片">
+    <img src="images/7_1_0.jpg" alt="拾鲜生海陆综合礼盒298型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生海陆综合礼盒298型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">298</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>深海野化大黄鱼400g-500g/条×1</li><li>东海带鱼中段400g/袋×1</li><li>东海海捕大对虾250g/袋×1</li><li>精切猪大排400g/袋×1</li><li>精品五花肉400g/袋×1</li><li>和牛牛肉汉堡饼100g/袋×2</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10237415092592.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="拾鲜生海陆综合礼盒398型 深海野化大黄鱼400g-500g/条×1 巴沙鱼柳400g/袋×1 深海鳕鱼排300g/袋×1 东海海捕大对虾250g/袋×1 九华山童子鸡600-700g/只×1 精切猪大排400g/袋×1 精品五花肉400g/袋×1 原切牛腩块350g/袋×1 海陆综合礼盒 海里游的、地上跑的一桌端齐，家宴送礼两相宜。">
+  
+  <button class="card-img" data-full="images/7_2_0.jpg" aria-label="放大查看 拾鲜生海陆综合礼盒398型 图片">
+    <img src="images/7_2_0.jpg" alt="拾鲜生海陆综合礼盒398型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生海陆综合礼盒398型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">398</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>深海野化大黄鱼400g-500g/条×1</li><li>巴沙鱼柳400g/袋×1</li><li>深海鳕鱼排300g/袋×1</li><li>东海海捕大对虾250g/袋×1</li><li>九华山童子鸡600-700g/只×1</li><li>精切猪大排400g/袋×1</li><li>精品五花肉400g/袋×1</li><li>原切牛腩块350g/袋×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物/卡券</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10237415092593.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="拾鲜生海陆综合礼盒498型 深海野化大黄鱼400g-500g/条×1 原味鲜贝柱500g/袋×1 满籽多春鱼300g/袋×1 东海海捕大对虾250g/袋×1 精品五花肉400g/袋×1 净猪蹄切块400g/袋×1 樱桃谷散养鸭1000-1200g/只×1 原切牛肋条350g/袋×1 海陆综合礼盒 海里游的、地上跑的一桌端齐，家宴送礼两相宜。">
+  
+  <button class="card-img" data-full="images/7_3_0.jpg" aria-label="放大查看 拾鲜生海陆综合礼盒498型 图片">
+    <img src="images/7_3_0.jpg" alt="拾鲜生海陆综合礼盒498型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生海陆综合礼盒498型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">498</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>深海野化大黄鱼400g-500g/条×1</li><li>原味鲜贝柱500g/袋×1</li><li>满籽多春鱼300g/袋×1</li><li>东海海捕大对虾250g/袋×1</li><li>精品五花肉400g/袋×1</li><li>净猪蹄切块400g/袋×1</li><li>樱桃谷散养鸭1000-1200g/只×1</li><li>原切牛肋条350g/袋×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10237415092594.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="拾鲜生海陆综合礼盒598型 深海野化大黄鱼400g-500g/条×1 冰岛红极参400g/袋×1 精选特大青虾仁260g/袋×1 南海深海金鲳鱼300-400g/条×1 东海海捕大对虾250g/袋×1 整切进口三文鱼扒200g/袋×1 原切牛腩块350g/袋×1 原切牛腱子350g/袋×1 精切猪大排400g/袋×1 精品五花肉400g/袋×1 海陆综合礼盒 海里游的、地上跑的一桌端齐，家宴送礼两相宜。">
+  
+  <button class="card-img" data-full="images/7_4_0.jpg" aria-label="放大查看 拾鲜生海陆综合礼盒598型 图片">
+    <img src="images/7_4_0.jpg" alt="拾鲜生海陆综合礼盒598型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生海陆综合礼盒598型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">598</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>深海野化大黄鱼400g-500g/条×1</li><li>冰岛红极参400g/袋×1</li><li>精选特大青虾仁260g/袋×1</li><li>南海深海金鲳鱼300-400g/条×1</li><li>东海海捕大对虾250g/袋×1</li><li>整切进口三文鱼扒200g/袋×1</li><li>原切牛腩块350g/袋×1</li><li>原切牛腱子350g/袋×1</li><li>精切猪大排400g/袋×1</li><li>精品五花肉400g/袋×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10237415092595.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="拾鲜生海陆综合礼盒698型 深海野化大黄鱼500g-600g/条×1 福建大乌参300g/袋×1 整切进口三文鱼扒200g/袋×1 南海深海金鲳鱼300-400g/条×1 东海海捕大对虾250g/袋×1 原味鲜贝柱500g/袋×1 九华山老母鸡1200-1400g/只×1 原切牛腩块350g/袋×1 精切猪大排400g/袋×1 净猪蹄切块400g/袋×1 海陆综合礼盒 海里游的、地上跑的一桌端齐，家宴送礼两相宜。">
+  
+  <button class="card-img" data-full="images/7_5_0.jpg" aria-label="放大查看 拾鲜生海陆综合礼盒698型 图片">
+    <img src="images/7_5_0.jpg" alt="拾鲜生海陆综合礼盒698型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生海陆综合礼盒698型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">698</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>深海野化大黄鱼500g-600g/条×1</li><li>福建大乌参300g/袋×1</li><li>整切进口三文鱼扒200g/袋×1</li><li>南海深海金鲳鱼300-400g/条×1</li><li>东海海捕大对虾250g/袋×1</li><li>原味鲜贝柱500g/袋×1</li><li>九华山老母鸡1200-1400g/只×1</li><li>原切牛腩块350g/袋×1</li><li>精切猪大排400g/袋×1</li><li>净猪蹄切块400g/袋×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10237415092596.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="拾鲜生海陆综合礼盒898型 深海野化大黄鱼500g-600g/条×1 阿拉斯加雪蟹腿400-600g/盒×1 东海野生大鲳鱼350-450g/条×1 生冻黑虎虾400g/盒×1 大连深海鲍鱼250g/袋×1 九华山老母鸡1200-1400g/只×1 原切牛腩块350g/袋×1 乌珠穆沁旗草原地标羔羊肋排400g/袋×1 带皮猪后腿肉400g/袋×1 精切猪大排400g/袋×1 海陆综合礼盒 海里游的、地上跑的一桌端齐，家宴送礼两相宜。">
+  
+  <button class="card-img" data-full="images/7_6_0.jpg" aria-label="放大查看 拾鲜生海陆综合礼盒898型 图片">
+    <img src="images/7_6_0.jpg" alt="拾鲜生海陆综合礼盒898型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生海陆综合礼盒898型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">898</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>深海野化大黄鱼500g-600g/条×1</li><li>阿拉斯加雪蟹腿400-600g/盒×1</li><li>东海野生大鲳鱼350-450g/条×1</li><li>生冻黑虎虾400g/盒×1</li><li>大连深海鲍鱼250g/袋×1</li><li>九华山老母鸡1200-1400g/只×1</li><li>原切牛腩块350g/袋×1</li><li>乌珠穆沁旗草原地标羔羊肋排400g/袋×1</li><li>带皮猪后腿肉400g/袋×1</li><li>精切猪大排400g/袋×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10237415092597.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article></div>
+</section><section class="series" id="cat8" data-name="东海全鳞钓带鱼">
+  <header class="series-head">
+    <svg class="star" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2 L24.5 14.5 L37 15 L27 23 L30.5 35.5 L20 28 L9.5 35.5 L13 23 L3 15 L15.5 14.5 Z"/></svg>
+    <h2>东海全鳞钓带鱼</h2>
+    <p>东海全鳞钓带鱼冰鲜直发，顺丰专送，6-10 月的限定鲜味。</p>
+  </header>
+  <div class="grid"><article class="card" data-search="冰鲜东海全鳞钓带鱼250g-350g/条（3条装）礼盒 250g-350g/条(总重不低于900g)×3 东海全鳞钓带鱼 东海全鳞钓带鱼冰鲜直发，顺丰专送，6-10 月的限定鲜味。">
+  
+  <button class="card-img" data-full="images/8_1_0.jpg" aria-label="放大查看 冰鲜东海全鳞钓带鱼250g-350g/条（3条装）礼盒 图片">
+    <img src="images/8_1_0.jpg" alt="冰鲜东海全鳞钓带鱼250g-350g/条（3条装）礼盒" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>冰鲜东海全鳞钓带鱼250g-350g/条（3条装）礼盒</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">265</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>250g-350g/条(总重不低于900g)×3</li></ul>
+    <div class="chips">
+      <span class="chip region" title="顺丰（仅江浙沪）">顺丰 · 仅江浙沪</span>
+      <span class="chip cycle">6-10月</span>
+      <span class="chip status">实物</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10115040285319.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="冰鲜东海全鳞钓带鱼250g-350g/条（5条装）礼盒 250g-350g/条(总重不低于1500g)×5 东海全鳞钓带鱼 东海全鳞钓带鱼冰鲜直发，顺丰专送，6-10 月的限定鲜味。">
+  
+  <button class="card-img" data-full="images/8_2_0.jpg" aria-label="放大查看 冰鲜东海全鳞钓带鱼250g-350g/条（5条装）礼盒 图片">
+    <img src="images/8_2_0.jpg" alt="冰鲜东海全鳞钓带鱼250g-350g/条（5条装）礼盒" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>冰鲜东海全鳞钓带鱼250g-350g/条（5条装）礼盒</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">380</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>250g-350g/条(总重不低于1500g)×5</li></ul>
+    <div class="chips">
+      <span class="chip region" title="顺丰（仅江浙沪）">顺丰 · 仅江浙沪</span>
+      <span class="chip cycle">6-10月</span>
+      <span class="chip status">实物</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10224315761851.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="冰鲜东海全鳞钓带鱼350g-450g/条（3条装）礼盒 350-450g/条（总重不低于1200g）×3 东海全鳞钓带鱼 东海全鳞钓带鱼冰鲜直发，顺丰专送，6-10 月的限定鲜味。">
+  
+  <button class="card-img" data-full="images/8_3_0.jpg" aria-label="放大查看 冰鲜东海全鳞钓带鱼350g-450g/条（3条装）礼盒 图片">
+    <img src="images/8_3_0.jpg" alt="冰鲜东海全鳞钓带鱼350g-450g/条（3条装）礼盒" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>冰鲜东海全鳞钓带鱼350g-450g/条（3条装）礼盒</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">360</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>350-450g/条（总重不低于1200g）×3</li></ul>
+    <div class="chips">
+      <span class="chip region" title="顺丰（仅江浙沪）">顺丰 · 仅江浙沪</span>
+      <span class="chip cycle">6-10月</span>
+      <span class="chip status">实物</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10224315761852.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="冰鲜东海全鳞钓带鱼350g-450g/条（5条装）礼盒 350-450g/条（总重不低于2000g）×5 东海全鳞钓带鱼 东海全鳞钓带鱼冰鲜直发，顺丰专送，6-10 月的限定鲜味。">
+  
+  <button class="card-img" data-full="images/8_4_0.jpg" aria-label="放大查看 冰鲜东海全鳞钓带鱼350g-450g/条（5条装）礼盒 图片">
+    <img src="images/8_4_0.jpg" alt="冰鲜东海全鳞钓带鱼350g-450g/条（5条装）礼盒" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>冰鲜东海全鳞钓带鱼350g-450g/条（5条装）礼盒</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">553</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>350-450g/条（总重不低于2000g）×5</li></ul>
+    <div class="chips">
+      <span class="chip region" title="顺丰（仅江浙沪）">顺丰 · 仅江浙沪</span>
+      <span class="chip cycle">6-10月</span>
+      <span class="chip status">实物</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10224315761853.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="冰鲜东海全鳞钓带鱼450g以上/条（3条装）礼盒 450g以上/条（总重不低于1500g）×3 东海全鳞钓带鱼 东海全鳞钓带鱼冰鲜直发，顺丰专送，6-10 月的限定鲜味。">
+  
+  <button class="card-img" data-full="images/8_5_0.jpg" aria-label="放大查看 冰鲜东海全鳞钓带鱼450g以上/条（3条装）礼盒 图片">
+    <img src="images/8_5_0.jpg" alt="冰鲜东海全鳞钓带鱼450g以上/条（3条装）礼盒" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>冰鲜东海全鳞钓带鱼450g以上/条（3条装）礼盒</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">457</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>450g以上/条（总重不低于1500g）×3</li></ul>
+    <div class="chips">
+      <span class="chip region" title="顺丰（仅江浙沪）">顺丰 · 仅江浙沪</span>
+      <span class="chip cycle">6-10月</span>
+      <span class="chip status">实物</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10224315761854.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="冰鲜东海全鳞钓带鱼450g以上/条（5条装）礼盒 450g以上/条（总重不低于2500g）×5 东海全鳞钓带鱼 东海全鳞钓带鱼冰鲜直发，顺丰专送，6-10 月的限定鲜味。">
+  
+  <button class="card-img" data-full="images/8_6_0.jpg" aria-label="放大查看 冰鲜东海全鳞钓带鱼450g以上/条（5条装）礼盒 图片">
+    <img src="images/8_6_0.jpg" alt="冰鲜东海全鳞钓带鱼450g以上/条（5条装）礼盒" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>冰鲜东海全鳞钓带鱼450g以上/条（5条装）礼盒</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">746</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>450g以上/条（总重不低于2500g）×5</li></ul>
+    <div class="chips">
+      <span class="chip region" title="顺丰（仅江浙沪）">顺丰 · 仅江浙沪</span>
+      <span class="chip cycle">6-10月</span>
+      <span class="chip status">实物</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10224315761855.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article></div>
+</section><section class="series" id="cat9" data-name="海捕臻品冰鲜">
+  <header class="series-head">
+    <svg class="star" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2 L24.5 14.5 L37 15 L27 23 L30.5 35.5 L20 28 L9.5 35.5 L13 23 L3 15 L15.5 14.5 Z"/></svg>
+    <h2>海捕臻品冰鲜</h2>
+    <p>东海流网捕捞，半野生大黄鱼领衔，每年 9 月中旬至次年 4 月中旬限定。</p>
+  </header>
+  <div class="grid"><article class="card" data-search="拾鲜生海捕臻品冰鲜礼盒298型 东海宁德半野生大黄鱼×1 东海海捕流网油带鱼（200-300g/条）×1 东海野生流网马鲛鱼×1 东海野生流网目鱼×1 海捕臻品冰鲜 东海流网捕捞，半野生大黄鱼领衔，每年 9 月中旬至次年 4 月中旬限定。">
+  <div class="tw">总重 450-500g</div>
+  <button class="card-img" data-full="images/9_1_0.jpg" aria-label="放大查看 拾鲜生海捕臻品冰鲜礼盒298型 图片">
+    <img src="images/9_1_0.jpg" alt="拾鲜生海捕臻品冰鲜礼盒298型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生海捕臻品冰鲜礼盒298型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">298</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>东海宁德半野生大黄鱼×1</li><li>东海海捕流网油带鱼（200-300g/条）×1</li><li>东海野生流网马鲛鱼×1</li><li>东海野生流网目鱼×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="配送范围：江浙沪皖">江浙沪皖</span>
+      <span class="chip cycle">每年9月中旬至次年四月中旬</span>
+      <span class="chip status">实物</span>
+    </div>
+    
+  </div>
+</article><article class="card" data-search="拾鲜生海捕臻品冰鲜礼盒398型 东海宁德半野生大黄鱼×1 东海海捕流网油带鱼×1 东海纯野生大米鱼×1 东海野生海捕白鲳鱼×1 东海野生流网目鱼×1 海捕臻品冰鲜 东海流网捕捞，半野生大黄鱼领衔，每年 9 月中旬至次年 4 月中旬限定。">
+  <div class="tw">总重 450-500g</div>
+  <button class="card-img" data-full="images/9_2_0.jpg" aria-label="放大查看 拾鲜生海捕臻品冰鲜礼盒398型 图片">
+    <img src="images/9_2_0.jpg" alt="拾鲜生海捕臻品冰鲜礼盒398型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生海捕臻品冰鲜礼盒398型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">398</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>东海宁德半野生大黄鱼×1</li><li>东海海捕流网油带鱼×1</li><li>东海纯野生大米鱼×1</li><li>东海野生海捕白鲳鱼×1</li><li>东海野生流网目鱼×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="配送范围：江浙沪皖">江浙沪皖</span>
+      <span class="chip cycle">每年9月中旬至次年四月中旬</span>
+      <span class="chip status">实物</span>
+    </div>
+    
+  </div>
+</article><article class="card" data-search="拾鲜生海捕臻品冰鲜礼盒498型 东海半野生大黄鱼×1 东海海捕流网油带鱼×1 东海纯野生大米鱼×1 东海野生流网马鲛鱼×1 东海野生海捕白鲳鱼×1 东海野生流网目鱼×1 海捕臻品冰鲜 东海流网捕捞，半野生大黄鱼领衔，每年 9 月中旬至次年 4 月中旬限定。">
+  <div class="tw">总重 500-600g</div>
+  <button class="card-img" data-full="images/9_3_0.jpg" aria-label="放大查看 拾鲜生海捕臻品冰鲜礼盒498型 图片">
+    <img src="images/9_3_0.jpg" alt="拾鲜生海捕臻品冰鲜礼盒498型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生海捕臻品冰鲜礼盒498型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">498</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>东海半野生大黄鱼×1</li><li>东海海捕流网油带鱼×1</li><li>东海纯野生大米鱼×1</li><li>东海野生流网马鲛鱼×1</li><li>东海野生海捕白鲳鱼×1</li><li>东海野生流网目鱼×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="配送范围：江浙沪皖">江浙沪皖</span>
+      <span class="chip cycle">每年9月中旬至次年四月中旬</span>
+      <span class="chip status">实物</span>
+    </div>
+    
+  </div>
+</article><article class="card" data-search="拾鲜生海捕臻品冰鲜礼盒598型 东海半野生大黄鱼×1 东海野生海捕白鲳鱼×1 东海野生流网马鲛鱼×1 东海纯野生大米鱼×1 东海野生小黄鱼×1 东海流网滑皮虾×1 东海野生流网目鱼×1 海捕臻品冰鲜 东海流网捕捞，半野生大黄鱼领衔，每年 9 月中旬至次年 4 月中旬限定。">
+  <div class="tw">总重 500-600g</div>
+  <button class="card-img" data-full="images/9_4_0.jpg" aria-label="放大查看 拾鲜生海捕臻品冰鲜礼盒598型 图片">
+    <img src="images/9_4_0.jpg" alt="拾鲜生海捕臻品冰鲜礼盒598型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生海捕臻品冰鲜礼盒598型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">598</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>东海半野生大黄鱼×1</li><li>东海野生海捕白鲳鱼×1</li><li>东海野生流网马鲛鱼×1</li><li>东海纯野生大米鱼×1</li><li>东海野生小黄鱼×1</li><li>东海流网滑皮虾×1</li><li>东海野生流网目鱼×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="配送范围：江浙沪皖">江浙沪皖</span>
+      <span class="chip cycle">每年9月中旬至次年四月中旬</span>
+      <span class="chip status">实物</span>
+    </div>
+    
+  </div>
+</article><article class="card" data-search="拾鲜生海捕臻品冰鲜礼盒888型 东海半野生大黄鱼×1 东海野生海捕白鲳鱼×1 东海野生流网马鲛鱼×1 东海海捕流网油带鱼×1 东海野生小黄鱼×1 东海特级红膏炝蟹×1 东海流网滑皮虾×1 东海野生流网目鱼×1 海捕臻品冰鲜 东海流网捕捞，半野生大黄鱼领衔，每年 9 月中旬至次年 4 月中旬限定。">
+  <div class="tw">总重 500-600g</div>
+  <button class="card-img" data-full="images/9_5_0.jpg" aria-label="放大查看 拾鲜生海捕臻品冰鲜礼盒888型 图片">
+    <img src="images/9_5_0.jpg" alt="拾鲜生海捕臻品冰鲜礼盒888型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生海捕臻品冰鲜礼盒888型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">888</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>东海半野生大黄鱼×1</li><li>东海野生海捕白鲳鱼×1</li><li>东海野生流网马鲛鱼×1</li><li>东海海捕流网油带鱼×1</li><li>东海野生小黄鱼×1</li><li>东海特级红膏炝蟹×1</li><li>东海流网滑皮虾×1</li><li>东海野生流网目鱼×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="配送范围：江浙沪皖">江浙沪皖</span>
+      <span class="chip cycle">每年9月中旬至次年四月中旬</span>
+      <span class="chip status">实物</span>
+    </div>
+    
+  </div>
+</article><article class="card" data-search="拾鲜生海捕臻品冰鲜礼盒1288型 东海半野生大黄鱼×1 东海野生海捕特大白鲳鱼×1 野生海捕东星斑×1 东海海捕流网油带鱼×1 东海野生小黄鱼×1 东海特级红膏炝蟹×1 东海纯野生竹节虾×1 东海野生流网目鱼×1 海捕臻品冰鲜 东海流网捕捞，半野生大黄鱼领衔，每年 9 月中旬至次年 4 月中旬限定。">
+  <div class="tw">总重 600-700g</div>
+  <button class="card-img" data-full="images/9_6_0.jpg" aria-label="放大查看 拾鲜生海捕臻品冰鲜礼盒1288型 图片">
+    <img src="images/9_6_0.jpg" alt="拾鲜生海捕臻品冰鲜礼盒1288型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生海捕臻品冰鲜礼盒1288型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">1,288</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>东海半野生大黄鱼×1</li><li>东海野生海捕特大白鲳鱼×1</li><li>野生海捕东星斑×1</li><li>东海海捕流网油带鱼×1</li><li>东海野生小黄鱼×1</li><li>东海特级红膏炝蟹×1</li><li>东海纯野生竹节虾×1</li><li>东海野生流网目鱼×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="配送范围：江浙沪皖">江浙沪皖</span>
+      <span class="chip cycle">每年9月中旬至次年四月中旬</span>
+      <span class="chip status">实物</span>
+    </div>
+    
+  </div>
+</article><article class="card" data-search="拾鲜生海捕臻品冰鲜礼盒1588型 东海半野生大黄鱼×1 东海野生海捕特大白鲳鱼×1 野生海捕东星斑×1 东海海捕流网油带鱼×1 东海野生小黄鱼×1 东海特级红膏炝蟹×1 东海纯野生竹节虾×1 东海野生流网目鱼×1 海捕臻品冰鲜 东海流网捕捞，半野生大黄鱼领衔，每年 9 月中旬至次年 4 月中旬限定。">
+  <div class="tw">总重 700-800g</div>
+  <button class="card-img" data-full="images/9_7_0.jpg" aria-label="放大查看 拾鲜生海捕臻品冰鲜礼盒1588型 图片">
+    <img src="images/9_7_0.jpg" alt="拾鲜生海捕臻品冰鲜礼盒1588型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生海捕臻品冰鲜礼盒1588型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">1,588</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>东海半野生大黄鱼×1</li><li>东海野生海捕特大白鲳鱼×1</li><li>野生海捕东星斑×1</li><li>东海海捕流网油带鱼×1</li><li>东海野生小黄鱼×1</li><li>东海特级红膏炝蟹×1</li><li>东海纯野生竹节虾×1</li><li>东海野生流网目鱼×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="配送范围：江浙沪皖">江浙沪皖</span>
+      <span class="chip cycle">每年9月中旬至次年四月中旬</span>
+      <span class="chip status">实物</span>
+    </div>
+    
+  </div>
+</article><article class="card" data-search="拾鲜生海捕臻品冰鲜礼盒2088型 东海流网纯野生海捕黄鱼×1 东海野生海捕特大白鲳鱼×1 野生海捕东星斑×1 东海海捕流网油带鱼×1 东海纯野生大玉秃×1 东海特级红膏炝蟹×1 东海纯野生竹节虾×1 东海纯野生超大目鱼×1 海捕臻品冰鲜 东海流网捕捞，半野生大黄鱼领衔，每年 9 月中旬至次年 4 月中旬限定。">
+  <div class="tw">总重 450-550g</div>
+  <button class="card-img" data-full="images/9_8_0.jpg" aria-label="放大查看 拾鲜生海捕臻品冰鲜礼盒2088型 图片">
+    <img src="images/9_8_0.jpg" alt="拾鲜生海捕臻品冰鲜礼盒2088型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生海捕臻品冰鲜礼盒2088型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">2,088</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>东海流网纯野生海捕黄鱼×1</li><li>东海野生海捕特大白鲳鱼×1</li><li>野生海捕东星斑×1</li><li>东海海捕流网油带鱼×1</li><li>东海纯野生大玉秃×1</li><li>东海特级红膏炝蟹×1</li><li>东海纯野生竹节虾×1</li><li>东海纯野生超大目鱼×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="配送范围：江浙沪皖">江浙沪皖</span>
+      <span class="chip cycle">每年9月中旬至次年四月中旬</span>
+      <span class="chip status">实物</span>
+    </div>
+    
+  </div>
+</article></div>
+</section><section class="series" id="cat10" data-name="大闸蟹 · 黑卡">
+  <header class="series-head">
+    <svg class="star" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2 L24.5 14.5 L37 15 L27 23 L30.5 35.5 L20 28 L9.5 35.5 L13 23 L3 15 L15.5 14.5 Z"/></svg>
+    <h2>大闸蟹 · 黑卡</h2>
+    <p>精品阳澄湖大闸蟹公母配对，9 月下旬开湖后按卡发货。</p>
+  </header>
+  <div class="grid"><article class="card" data-search="拾鲜生 精品阳澄湖大闸蟹(黑卡)1199型 公蟹3.5两/4只 母蟹2.5两/4只×1 大闸蟹 · 黑卡 精品阳澄湖大闸蟹公母配对，9 月下旬开湖后按卡发货。">
+  
+  <button class="card-img" data-full="images/10_1_0.jpg" aria-label="放大查看 拾鲜生 精品阳澄湖大闸蟹(黑卡)1199型 图片">
+    <img src="images/10_1_0.jpg" alt="拾鲜生 精品阳澄湖大闸蟹(黑卡)1199型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生 精品阳澄湖大闸蟹(黑卡)1199型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">1,199</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>公蟹3.5两/4只 母蟹2.5两/4只×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">每年九月下旬开湖至12月31日前</span>
+      <span class="chip status">实物/卡券</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10232257863208.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="拾鲜生 精品阳澄湖大闸蟹(黑卡)1999型 公蟹4.0两/4只 母蟹3.0两/4只×1 大闸蟹 · 黑卡 精品阳澄湖大闸蟹公母配对，9 月下旬开湖后按卡发货。">
+  
+  <button class="card-img" data-full="images/10_2_0.jpg" aria-label="放大查看 拾鲜生 精品阳澄湖大闸蟹(黑卡)1999型 图片">
+    <img src="images/10_2_0.jpg" alt="拾鲜生 精品阳澄湖大闸蟹(黑卡)1999型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生 精品阳澄湖大闸蟹(黑卡)1999型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">1,999</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>公蟹4.0两/4只 母蟹3.0两/4只×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">每年九月下旬开湖至12月31日前</span>
+      <span class="chip status">实物/卡券</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10232258947937.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="拾鲜生 精品阳澄湖大闸蟹(黑卡)2699型 公蟹4.5两/4只 母蟹3.5两/4只×1 大闸蟹 · 黑卡 精品阳澄湖大闸蟹公母配对，9 月下旬开湖后按卡发货。">
+  
+  <button class="card-img" data-full="images/10_3_0.jpg" aria-label="放大查看 拾鲜生 精品阳澄湖大闸蟹(黑卡)2699型 图片">
+    <img src="images/10_3_0.jpg" alt="拾鲜生 精品阳澄湖大闸蟹(黑卡)2699型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生 精品阳澄湖大闸蟹(黑卡)2699型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">2,699</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>公蟹4.5两/4只 母蟹3.5两/4只×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">每年九月下旬开湖至12月31日前</span>
+      <span class="chip status">实物/卡券</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10232258947938.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="拾鲜生 精品阳澄湖大闸蟹(黑卡)3899型 公蟹5.0两/4只 母蟹3.5两/4只×1 大闸蟹 · 黑卡 精品阳澄湖大闸蟹公母配对，9 月下旬开湖后按卡发货。">
+  
+  <button class="card-img" data-full="images/10_4_0.jpg" aria-label="放大查看 拾鲜生 精品阳澄湖大闸蟹(黑卡)3899型 图片">
+    <img src="images/10_4_0.jpg" alt="拾鲜生 精品阳澄湖大闸蟹(黑卡)3899型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生 精品阳澄湖大闸蟹(黑卡)3899型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">3,899</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>公蟹5.0两/4只 母蟹3.5两/4只×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">每年九月下旬开湖至12月31日前</span>
+      <span class="chip status">实物/卡券</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10232258947939.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="拾鲜生 精品阳澄湖大闸蟹(黑卡)4899型 公蟹5.0两/4只 母蟹4.0两/4只×1 大闸蟹 · 黑卡 精品阳澄湖大闸蟹公母配对，9 月下旬开湖后按卡发货。">
+  
+  <button class="card-img" data-full="images/10_5_0.jpg" aria-label="放大查看 拾鲜生 精品阳澄湖大闸蟹(黑卡)4899型 图片">
+    <img src="images/10_5_0.jpg" alt="拾鲜生 精品阳澄湖大闸蟹(黑卡)4899型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生 精品阳澄湖大闸蟹(黑卡)4899型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">4,899</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>公蟹5.0两/4只 母蟹4.0两/4只×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">每年九月下旬开湖至12月31日前</span>
+      <span class="chip status">实物/卡券</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10232258947940.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="拾鲜生 精品阳澄湖大闸蟹(黑卡)6899型 公蟹6.0两/4只 母蟹4.5两/4只×1 大闸蟹 · 黑卡 精品阳澄湖大闸蟹公母配对，9 月下旬开湖后按卡发货。">
+  
+  <button class="card-img" data-full="images/10_6_0.jpg" aria-label="放大查看 拾鲜生 精品阳澄湖大闸蟹(黑卡)6899型 图片">
+    <img src="images/10_6_0.jpg" alt="拾鲜生 精品阳澄湖大闸蟹(黑卡)6899型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生 精品阳澄湖大闸蟹(黑卡)6899型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">6,899</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>公蟹6.0两/4只 母蟹4.5两/4只×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">每年九月下旬开湖至12月31日前</span>
+      <span class="chip status">实物/卡券</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10232258947941.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article></div>
+</section><section class="series" id="cat11" data-name="大闸蟹 · 红卡">
+  <header class="series-head">
+    <svg class="star" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2 L24.5 14.5 L37 15 L27 23 L30.5 35.5 L20 28 L9.5 35.5 L13 23 L3 15 L15.5 14.5 Z"/></svg>
+    <h2>大闸蟹 · 红卡</h2>
+    <p>同一片阳澄湖，更亲民的优选规格。</p>
+  </header>
+  <div class="grid"><article class="card" data-search="拾鲜生 优选阳澄湖大闸蟹(红卡)1188型 公蟹3.5两/4只 母蟹2.5两/4只×1 大闸蟹 · 红卡 同一片阳澄湖，更亲民的优选规格。">
+  
+  <button class="card-img" data-full="images/11_1_0.jpg" aria-label="放大查看 拾鲜生 优选阳澄湖大闸蟹(红卡)1188型 图片">
+    <img src="images/11_1_0.jpg" alt="拾鲜生 优选阳澄湖大闸蟹(红卡)1188型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生 优选阳澄湖大闸蟹(红卡)1188型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">1,188</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>公蟹3.5两/4只 母蟹2.5两/4只×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">每年九月下旬开湖至12月31日前</span>
+      <span class="chip status">实物/卡券</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10232262700592.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="拾鲜生 优选阳澄湖大闸蟹(红卡)1888型 公蟹4.0两/4只 母蟹3.0两/4只×1 大闸蟹 · 红卡 同一片阳澄湖，更亲民的优选规格。">
+  
+  <button class="card-img" data-full="images/11_2_0.jpg" aria-label="放大查看 拾鲜生 优选阳澄湖大闸蟹(红卡)1888型 图片">
+    <img src="images/11_2_0.jpg" alt="拾鲜生 优选阳澄湖大闸蟹(红卡)1888型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生 优选阳澄湖大闸蟹(红卡)1888型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">1,888</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>公蟹4.0两/4只 母蟹3.0两/4只×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">每年九月下旬开湖至12月31日前</span>
+      <span class="chip status">实物/卡券</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10232262700593.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="拾鲜生 优选阳澄湖大闸蟹(红卡)2588型 公蟹4.5两/4只 母蟹3.5两/4只×1 大闸蟹 · 红卡 同一片阳澄湖，更亲民的优选规格。">
+  
+  <button class="card-img" data-full="images/11_3_0.jpg" aria-label="放大查看 拾鲜生 优选阳澄湖大闸蟹(红卡)2588型 图片">
+    <img src="images/11_3_0.jpg" alt="拾鲜生 优选阳澄湖大闸蟹(红卡)2588型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生 优选阳澄湖大闸蟹(红卡)2588型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">2,588</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>公蟹4.5两/4只 母蟹3.5两/4只×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">每年九月下旬开湖至12月31日前</span>
+      <span class="chip status">实物/卡券</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10232262700594.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="拾鲜生 优选阳澄湖大闸蟹(红卡)3688型 公蟹5.0两/4只 母蟹4.0两/4只×1 大闸蟹 · 红卡 同一片阳澄湖，更亲民的优选规格。">
+  
+  <button class="card-img" data-full="images/11_4_0.jpg" aria-label="放大查看 拾鲜生 优选阳澄湖大闸蟹(红卡)3688型 图片">
+    <img src="images/11_4_0.jpg" alt="拾鲜生 优选阳澄湖大闸蟹(红卡)3688型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生 优选阳澄湖大闸蟹(红卡)3688型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">3,688</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>公蟹5.0两/4只 母蟹4.0两/4只×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">每年九月下旬开湖至12月31日前</span>
+      <span class="chip status">实物/卡券</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10232262700595.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="拾鲜生 优选阳澄湖大闸蟹(红卡)6388型 公蟹6.0两/4只 母蟹4.5两/4只×1 大闸蟹 · 红卡 同一片阳澄湖，更亲民的优选规格。">
+  
+  <button class="card-img" data-full="images/11_5_0.jpg" aria-label="放大查看 拾鲜生 优选阳澄湖大闸蟹(红卡)6388型 图片">
+    <img src="images/11_5_0.jpg" alt="拾鲜生 优选阳澄湖大闸蟹(红卡)6388型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生 优选阳澄湖大闸蟹(红卡)6388型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">6,388</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>公蟹6.0两/4只 母蟹4.5两/4只×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">每年九月下旬开湖至12月31日前</span>
+      <span class="chip status">实物/卡券</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10232262700596.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article></div>
+</section><section class="series" id="cat12" data-name="海参燕窝滋补">
+  <header class="series-head">
+    <svg class="star" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2 L24.5 14.5 L37 15 L27 23 L30.5 35.5 L20 28 L9.5 35.5 L13 23 L3 15 L15.5 14.5 Z"/></svg>
+    <h2>海参燕窝滋补</h2>
+    <p>大连淡干海参、马来西亚白燕盏，滋补送礼一步到位。</p>
+  </header>
+  <div class="grid"><article class="card" data-search="拾鲜生 大连淡干海参888型 大连淡干海参（50-60头）/100g×1 海参燕窝滋补 大连淡干海参、马来西亚白燕盏，滋补送礼一步到位。">
+  
+  <button class="card-img" data-full="images/12_1_0.jpg" aria-label="放大查看 拾鲜生 大连淡干海参888型 图片">
+    <img src="images/12_1_0.jpg" alt="拾鲜生 大连淡干海参888型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生 大连淡干海参888型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">888</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>大连淡干海参（50-60头）/100g×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。">全国（偏远地区须知）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10232260366931.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="拾鲜生 大连淡干海参1288型 大连淡干海参（50-60头）/160g×1 海参燕窝滋补 大连淡干海参、马来西亚白燕盏，滋补送礼一步到位。">
+  
+  <button class="card-img" data-full="images/12_2_0.jpg" aria-label="放大查看 拾鲜生 大连淡干海参1288型 图片">
+    <img src="images/12_2_0.jpg" alt="拾鲜生 大连淡干海参1288型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生 大连淡干海参1288型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">1,288</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>大连淡干海参（50-60头）/160g×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="配送范围：全国，除港澳台地区、新疆、西藏">全国（除部分区域）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10232260366932.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="拾鲜生 大连淡干海参1988型 大连淡干海参（50-60头）/250g×1 海参燕窝滋补 大连淡干海参、马来西亚白燕盏，滋补送礼一步到位。">
+  
+  <button class="card-img" data-full="images/12_3_0.jpg" aria-label="放大查看 拾鲜生 大连淡干海参1988型 图片">
+    <img src="images/12_3_0.jpg" alt="拾鲜生 大连淡干海参1988型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生 大连淡干海参1988型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">1,988</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>大连淡干海参（50-60头）/250g×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="配送范围：全国，除港澳台地区、新疆、西藏">全国（除部分区域）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10232260366933.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="拾鲜生 大连淡干海参2988型 大连淡干海参（50-60头）/500g×1 海参燕窝滋补 大连淡干海参、马来西亚白燕盏，滋补送礼一步到位。">
+  
+  <button class="card-img" data-full="images/12_4_0.jpg" aria-label="放大查看 拾鲜生 大连淡干海参2988型 图片">
+    <img src="images/12_4_0.jpg" alt="拾鲜生 大连淡干海参2988型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生 大连淡干海参2988型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">2,988</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>大连淡干海参（50-60头）/500g×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="配送范围：全国，除港澳台地区、新疆、西藏">全国（除部分区域）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10232260366934.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="拾鲜生 即食大连辽参礼盒358型 即食大连辽参（10-12头）/500g×1 海参燕窝滋补 大连淡干海参、马来西亚白燕盏，滋补送礼一步到位。">
+  
+  <button class="card-img" data-full="images/12_5_0.jpg" aria-label="放大查看 拾鲜生 即食大连辽参礼盒358型 图片">
+    <img src="images/12_5_0.jpg" alt="拾鲜生 即食大连辽参礼盒358型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生 即食大连辽参礼盒358型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">358</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>即食大连辽参（10-12头）/500g×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="配送范围：全国，除港澳台地区、新疆、西藏、海南、甘肃、青海、宁夏省全域不发货。（云南、贵州、四川、黑龙江、吉林、辽宁、内蒙仅配送省会城市）。">全国（部分限省会）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10232261067859.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="拾鲜生 马来西亚特级燕盏礼盒2088型 马来西亚白燕盏（特级）/50g×1 海参燕窝滋补 大连淡干海参、马来西亚白燕盏，滋补送礼一步到位。">
+  
+  <button class="card-img" data-full="images/12_6_0.jpg" aria-label="放大查看 拾鲜生 马来西亚特级燕盏礼盒2088型 图片">
+    <img src="images/12_6_0.jpg" alt="拾鲜生 马来西亚特级燕盏礼盒2088型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生 马来西亚特级燕盏礼盒2088型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">2,088</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>马来西亚白燕盏（特级）/50g×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="配送范围：全国，除港澳台地区、新疆、西藏">全国（除部分区域）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10232988116627.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article><article class="card" data-search="拾鲜生 马来西亚特级燕盏礼盒3988型 马来西亚白燕盏（特级）/100g×1 海参燕窝滋补 大连淡干海参、马来西亚白燕盏，滋补送礼一步到位。">
+  
+  <button class="card-img" data-full="images/12_7_0.jpg" aria-label="放大查看 拾鲜生 马来西亚特级燕盏礼盒3988型 图片">
+    <img src="images/12_7_0.jpg" alt="拾鲜生 马来西亚特级燕盏礼盒3988型" loading="lazy">
+  </button>
+  <div class="card-body">
+    <h3>拾鲜生 马来西亚特级燕盏礼盒3988型</h3>
+    <div class="price"><span class="cur">¥</span><span class="num">3,988</span><span class="unit">/盒</span></div>
+    <ul class="specs"><li>马来西亚白燕盏（特级）/100g×1</li></ul>
+    <div class="chips">
+      <span class="chip region" title="配送范围：全国，除港澳台地区、新疆、西藏">全国（除部分区域）</span>
+      <span class="chip cycle">全年</span>
+      <span class="chip status">实物</span>
+    </div>
+    <a class="jd" href="https://item.jd.com/10232988116628.html" target="_blank" rel="noopener">京东同款 ↗</a>
+  </div>
+</article></div>
+</section>
+  <div class="empty" id="empty"><b>没有找到匹配的产品</b>换个关键词试试，比如「带鱼」「牛排」「大闸蟹」。</div>
+</main>
+
+<footer>
+  <div class="foot-in">
+    <h4>配送区域说明</h4>
+    <ul class="legend"><li><b>R1</b> 全国发货须知：1.偏远地区不发货省份：新疆、西藏、青海、海南、香港、澳门、台湾。2.偏远地区只发省会省份：云南、贵州、四川、黑龙江、吉林、辽宁、内蒙古。3.偏远地区发货需加收费用省份《每单另收45元》：吉林（全域）、黑龙江（全域）、辽宁（全域）、云南（全域）、贵州（全域）、甘肃（全域）、宁夏（全域）、内蒙古（全域）、四川（除成都）。</li><li><b>R2</b> 配送范围：江浙沪皖</li><li><b>R3</b> 顺丰（仅江浙沪）</li><li><b>R4</b> 配送范围：全国，除港澳台地区、新疆、西藏</li><li><b>R5</b> 配送范围：全国，除港澳台地区、新疆、西藏、海南、甘肃、青海、宁夏省全域不发货。（云南、贵州、四川、黑龙江、吉林、辽宁、内蒙仅配送省会城市）。</li></ul>
+    <p class="pack-note">各系列产品均含包材 + 运费 + 冷媒（顺丰冷运）；标注「实物/卡券」的款型支持电子卡券先行送出。</p>
+    <p class="copyright"><b>版权所有 水泽山</b> · 拾鲜生 2026 标配套餐报价 · 本页面用于产品展示，实际价格与库存以销售确认为准</p>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="返回顶部"><svg viewBox="0 0 24 24"><path d="m6 14 6-6 6 6"/></svg></button>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="图片放大查看"><span class="lb-name" id="lbName"></span><img id="lbImg" alt=""></div>
+
+<script>
+(function(){
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.card'));
+  var series = Array.prototype.slice.call(document.querySelectorAll('.series'));
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.nav-chip'));
+  var q = document.getElementById('q');
+  var countEl = document.getElementById('count');
+  var empty = document.getElementById('empty');
+  var total = cards.length;
+
+  /* 搜索过滤 */
+  function filter(){
+    var kw = q.value.trim().toLowerCase();
+    var shown = 0;
+    cards.forEach(function(c){ c.classList.add('in'); });
+    cards.forEach(function(c){
+      var hit = !kw || c.getAttribute('data-search').indexOf(kw) > -1;
+      c.hidden = !hit;
+      if (hit) shown++;
+    });
+    series.forEach(function(s){
+      var vis = s.querySelectorAll('.card:not([hidden])').length > 0;
+      s.hidden = !vis;
+    });
+    empty.style.display = shown === 0 ? 'block' : 'none';
+    countEl.textContent = kw ? shown + ' / ' + total + ' 款' : total + ' 款';
+  }
+  q.addEventListener('input', filter);
+
+  /* 滚动入场 */
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {rootMargin:'0px 0px -8% 0px'});
+    cards.forEach(function(c){ io.observe(c); });
+  } else {
+    cards.forEach(function(c){ c.classList.add('in'); });
+  }
+
+  /* 导航高亮（scroll spy） */
+  var spy = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if (e.isIntersecting){
+        chips.forEach(function(ch){ ch.classList.toggle('active', ch.getAttribute('data-cat') === e.target.id); });
+      }
+    });
+  }, {rootMargin:'-30% 0px -60% 0px'});
+  series.forEach(function(s){ spy.observe(s); });
+
+  /* 图片放大 */
+  var lb = document.getElementById('lightbox'), lbImg = document.getElementById('lbImg'), lbName = document.getElementById('lbName');
+  document.addEventListener('click', function(ev){
+    var btn = ev.target.closest('.card-img');
+    var img = btn ? btn.querySelector('img') : null;
+    if (btn && img){
+      lbImg.src = img.getAttribute('src');
+      lbName.textContent = btn.getAttribute('aria-label').replace('放大查看 ','').replace(' 图片','');
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    } else if (ev.target.closest('.lightbox') || ev.key === 'Escape'){
+      lb.classList.remove('open'); lbImg.src = '';
+      document.body.style.overflow = '';
+    }
+  });
+  document.addEventListener('keydown', function(ev){
+    if (ev.key === 'Escape' && lb.classList.contains('open')){
+      lb.classList.remove('open'); lbImg.src = '';
+      document.body.style.overflow = '';
+    }
+  });
+
+  /* 咨询入口：悬停/点击展示二维码 */
+  var contact = document.getElementById('contact');
+  var contactBtn = document.getElementById('contactBtn');
+  var pinned = false;
+  var hoverable = window.matchMedia('(hover:hover)').matches;
+  function setPop(on){
+    contact.classList.toggle('open', on);
+    contactBtn.setAttribute('aria-expanded', on ? 'true' : 'false');
+  }
+  contactBtn.addEventListener('click', function(ev){
+    ev.stopPropagation();
+    pinned = !pinned;
+    setPop(pinned);
+  });
+  if (hoverable){
+    contact.addEventListener('mouseenter', function(){ setPop(true); });
+    contact.addEventListener('mouseleave', function(){ if (!pinned) setPop(false); });
+  }
+  document.addEventListener('click', function(ev){
+    if (!ev.target.closest('.contact')){ pinned = false; setPop(false); }
+  });
+  document.addEventListener('keydown', function(ev){
+    if (ev.key === 'Escape' && contact.classList.contains('open')){ pinned = false; setPop(false); }
+  });
+
+  /* 返回顶部 */
+  var toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', function(){ toTop.classList.toggle('show', window.scrollY > 600); }, {passive:true});
+  toTop.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+})();
+</script>
+</body>
+</html>
